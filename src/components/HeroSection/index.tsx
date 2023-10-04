@@ -1,17 +1,23 @@
-import podcastExample from "../../assets/podcast-example.png"
 export function HeroSection(){
     return(
-        <div className="grid grid-cols-5 py-8"> 
-           <div className={`col-span-2 px-[80px] my-auto`}>
-                <h1 className="text-4xl font-extrabold leading-none">
-                    Podcast
+        <div 
+            className={`bg-blend-multiply bg-center`}
+            style={{ 
+                backgroundImage: `url(https://github.com/Mohamed3Okasha/mena-hackathons/blob/main/src/assets/hero-section-bg.png?raw=true)`,
+                backgroundColor: `rgba(26, 67, 88, 0.60)`,
+            }}> 
+           <div className={`py-44 px-[80px] my-auto`}>
+                <h1 className="text-[#00FF95] text-6xl lg:text-8xl font-semibold leading-none mb-3 flex flex-col">
+                    <span className={``} >
+                        MENA
+                    </span> 
+                    <span>
+                       Hackathons
+                    </span>
                 </h1>
-                <p>
-                    This is a podcast about Utilising technoogy in favor of sustainability, by bringing minds from different cultures to share their expertis ewith our lovely audience
+                <p className={`font-medium	text-3xl`}>
+                    The 1st Hackathon Platform in the Middle East and North Africa
                 </p>
-           </div>
-           <div className={`col-span-3 flex justify-center max-w-fit`}>
-                <img src={podcastExample} alt={`podcast example`} className={`w-[75%]`}/>
            </div>
         </div>
     )
