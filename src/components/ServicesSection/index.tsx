@@ -20,7 +20,7 @@ export function ServicesSection(){
                         </span>
                     </h1>
                     <p className={`font-light text-1xl text-[#CECED0]`}>
-                        The 1st Hackathon Platform in the Middle East and North Africa
+                        We work collectively, together we’re brighter!
                     </p>
                 </div>
                 <div className={`flex justify-center gap-5`}>
