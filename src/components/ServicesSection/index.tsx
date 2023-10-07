@@ -7,7 +7,7 @@ import graphicDesignIconPath from "../../assets/graphic-design-icon.svg";
 
 export function ServicesSection(){
     return(
-        <div className={`p-20 my-auto`} id={`services`}>
+        <div className={`p-5 sm:p-20 my-auto`} id={`services`}>
             <div className={`mb-11`}>
                 <h1 className="text-3xl lg:text-4xl font-semibold leading-none mb-3">
                     <span className={`mr-3`} >

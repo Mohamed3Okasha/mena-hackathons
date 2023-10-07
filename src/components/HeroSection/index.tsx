@@ -7,7 +7,7 @@ export function HeroSection(){
                 backgroundColor: `rgba(26, 67, 88, 1)`,
             }}> 
            <div className={`py-44 px-[80px] my-auto`}>
-                <h1 className="text-[#00FF95] text-6xl lg:text-8xl font-semibold leading-none mb-3 flex flex-col">
+                <h1 className="text-[#00FF95] text-4xl sm:text-6xl lg:text-8xl font-semibold leading-none mb-3 flex flex-col">
                     <span className={``} >
                         MENA 
                     </span> 
