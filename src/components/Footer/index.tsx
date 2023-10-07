@@ -6,7 +6,7 @@ import twitterIcon from "../../assets/twitter-icon.svg"
 
 export function Footer(){
     return(
-        <div className={`bg-[#080A16] p-20 pb-0 my-auto`}>
+        <div className={`bg-[#080A16] p-20 pb-0 my-auto`} id={`contact`}>
             <div className={`mb-11`}>
                 <h1 className="text-2xl lg:text-3xl font-semibold leading-none mb-3">
                     <span className={`mr-3`} >
