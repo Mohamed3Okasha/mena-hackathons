@@ -21,7 +21,7 @@ export function ServicesSection(){
                     We work collectively, together we’re brighter!
                 </p>
             </div>
-            <div className={`flex justify-center gap-5`}>
+            <div className={`flex flex-col md:flex-row justify-center gap-5`}>
                 <ServiceCard title={`Development`} subTitle={`Create a platform with the best and coolest quality from us`} iconPath={developmentIconPath} altText={`icon`} iconBgColor={`teal`}/>
                 <ServiceCard title={`UI/UX Design`} subTitle={`We provide UI/UX Design services, and of course with the best quality`} iconPath={uiuxIconPath} altText={`icon`} iconBgColor={`red`}/>
                 <ServiceCard title={`Graphic Design`} subTitle={`We provide Graphic Design services, with the best designers`} iconPath={graphicDesignIconPath} altText={`icon`} iconBgColor={`sky`}/>
