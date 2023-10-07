@@ -1,4 +1,5 @@
 import './App.css';
+import { Footer } from './components/Footer';
 import { HeroSection } from './components/HeroSection';
 import {Navbar} from './components/Navbar';
 import { PartnersSection } from './components/PartnersSection';
@@ -11,6 +12,7 @@ export function App() {
     <HeroSection />
     <ServicesSection />
     <PartnersSection />
+    <Footer />
     </>
   )
 }
