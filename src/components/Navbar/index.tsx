@@ -24,9 +24,9 @@ export function Navbar(){
                     <li className="px-3">     
                     <a href="#home" className="block py-2 pl-3 pr-4 md:hover:bg-transparent md:border-0 md:hover:text-[#48ABDD] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
                     </li>
-                    {/* <li className="px-3">
-                    <a href="#" className="block py-2 pl-3 pr-4 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#48ABDD] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Podcast</a>
-                    </li> */}
+                    <li className="px-3">
+                    <a href="#about" className="block py-2 pl-3 pr-4 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#48ABDD] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                    </li>
                     <li className="px-3">
                     <a href="#services" className="block py-2 pl-3 pr-4 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#48ABDD] md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
                     </li>
