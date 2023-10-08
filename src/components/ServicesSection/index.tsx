@@ -7,14 +7,14 @@ import graphicDesignIconPath from "../../assets/graphic-design-icon.svg";
 
 export function ServicesSection(){
     return(
-        <div className={`p-5 sm:p-20 my-auto`} id={`services`}>
-            <div className={`mb-11`}>
+        <div className={`p-5 sm:px-20 sm:py-10 my-auto`} id={`services`}>
+            <div className={`mb-3`}>
                 <h1 className="text-3xl lg:text-4xl font-semibold leading-none mb-3">
                     <span className={`mr-3`} >
                         Our
                     </span> 
-                    <span className={`text-[#48ABDD]`}>
-                    Services
+                    <span className={`text-[#00FF95]`}>
+                        Tech House
                     </span>
                 </h1>
                 <p className={`font-light text-1xl text-[#CECED0]`}>
