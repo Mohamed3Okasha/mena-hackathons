@@ -1,13 +1,13 @@
-import { ServiceCard } from "../ServicesSection/service-card";
-import developmentIconPath from "../../assets/development-icon.svg";
-import uiuxIconPath from "../../assets/ui-ux-icon.svg";
-import graphicDesignIconPath from "../../assets/graphic-design-icon.svg";
+import { ProjectCard } from "./project-card";
+import hackathonsImgPath from "../../assets/hackathons.svg";
+import virtualExchangeImgPath from "../../assets/virtual-exchange.svg";
+import podcastImgPath from "../../assets/podcast.svg";
 
 
 export function ProjectsSection(){
     return(
         <div className={`p-5 sm:px-20 sm:py-10 my-auto`} id={`about`}>
-        <div className={`mb-3`}>
+        <div className={`mb-9`}>
             <h1 className="text-3xl lg:text-4xl font-semibold leading-none mb-3">
                 <span className={`mr-3`} >
                     Our
@@ -21,9 +21,10 @@ export function ProjectsSection(){
             </p>
         </div>
         <div className={`flex flex-col md:flex-row justify-center gap-5`}>
-            <ServiceCard title={`Hackathon`} subTitle={`Green Tech Hack, where the brightest minds work in the favour of our planet`} iconPath={developmentIconPath} altText={`icon`} iconBgColor={`teal`}/>
-            <ServiceCard title={`Podcast`} subTitle={`Let's share the most innovative way to utilise technology for a more sustainable earth`} iconPath={uiuxIconPath} altText={`icon`} iconBgColor={`red`}/>
-            <ServiceCard title={`Virtual Exchange`} subTitle={`Spreading green tech and culture exchange`} iconPath={graphicDesignIconPath} altText={`icon`} iconBgColor={`sky`}/>
+            <ProjectCard title={`Hackathons`} iconPath={hackathonsImgPath} iconBgColor={`sky`} altText={`hackathons image`}/>
+            <ProjectCard title={`Virtual Exchanges`} iconPath={virtualExchangeImgPath} iconBgColor={`red`} altText={`hackathons image`}/>
+            <ProjectCard title={`Green Tech Podcast`} iconPath={podcastImgPath} iconBgColor={`teal`} altText={`hackathons image`}/>
+
         </div>
     </div>
     )
