@@ -5,7 +5,7 @@ import hackKosiceLogo from "../../assets/hackkosice-logo.jpg"
 export function PartnersSection(){
     return(
         <div className={`p-5 sm:px-20 sm:py-10 my-auto`} id={`partners`}>
-            <div className={`mb-3`}>
+            <div className={`mb-9`}>
                 <h1 className="text-3xl lg:text-4xl font-semibold leading-none mb-3">
                     <span className={`mr-3`} >
                         Our

@@ -17,7 +17,7 @@ export function ProjectsSection(){
                 </span>
             </h1>
             <p className={`font-light text-1xl text-[#CECED0]`}>
-                A dream team full of energy and ambitions
+                Innovating Technology for Sustainable Development Goals
             </p>
         </div>
         <div className={`flex flex-col md:flex-row justify-center gap-5`}>
