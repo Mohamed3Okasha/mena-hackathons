@@ -8,7 +8,7 @@ type ServiceCardProps = {
 
 export function ServiceCard(Props: ServiceCardProps){
     return(
-        <div className={`flex flex-col items-center max-w-sm p-14 border-[1px] rounded-3xl border-transparent hover:border-${Props.iconBgColor}-500 hover:cursor-pointer`}>
+        <div className={`flex flex-col items-center max-w-sm p-5 sm:p-14 border-[1px] rounded-3xl border-transparent hover:border-${Props.iconBgColor}-500 hover:cursor-pointer`}>
             <img src={Props.iconPath} alt={Props.altText} className={`w-20 bg-${Props.iconBgColor}-950 p-4 rounded-full`} />
             <h1 className="text-xl lg:text-2xl font-medium my-4">
                 {Props.title}

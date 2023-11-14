@@ -39,8 +39,8 @@ export function Footer(){
             </div>
             
             <div className={`pt-20 pb-5 flex flex-col sm:flex-row justify-between items-center`}>
-                <p className={`font-light text-[#CECED0] text-left`}>© 2023 MENA Hackathons. All rights reserved.</p>
-                <p className={`font-light text-[#00FF95] text-right`}>Developed by MH Tech House</p>
+                <p className={`font-light text-[#CECED0] sm:text-left`}>© 2023 MENA Hackathons. All rights reserved.</p>
+                <p className={`font-light text-[#00FF95] sm:text-right`}>Developed by MH Tech House</p>
             </div>
         </div>
     )

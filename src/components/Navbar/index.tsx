@@ -3,7 +3,7 @@ import mhLogo from "../../assets/mh-logo-web.png";
 export function Navbar(){
     return(
         <nav className="dark:bg-gray-900">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-5">
+            <div className="max-w-screen-xl flex flex-wrap items-center justify-between  mx-11 lg:mx-auto py-5">
                 <a href="https://menahackathons.com/" className="w-fit flex items-center">
                     <img src={mhLogo} className="h-12 mr-3" alt="MENA Hackathons Logo" />
                     <span className="hidden lg:inline self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MENA Hackathons</span>
