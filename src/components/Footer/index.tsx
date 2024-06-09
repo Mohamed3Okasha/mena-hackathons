@@ -5,6 +5,8 @@ import twitterIcon from "../../assets/twitter-icon.svg"
 import emailIcon from "../../assets/email-icon.svg"
 
 export function Footer(){
+    const currentYear = new Date().getFullYear();
+
     return(
         <div className={`bg-[#080A16] p-5 sm:p-20 pb-0 sm:pb-0 my-auto`} id={`contact`}>
             <div className={`mb-9`}>
@@ -39,7 +41,7 @@ export function Footer(){
             </div>
             
             <div className={`pt-20 pb-5 flex flex-col sm:flex-row justify-between items-center`}>
-                <p className={`font-light text-[#CECED0] sm:text-left`}>© 2023 MENA Hackathons. All rights reserved.</p>
+                <p className={`font-light text-[#CECED0] sm:text-left`}>©{currentYear} MENA Hackathons. All rights reserved.</p>
                 <p className={`font-light text-[#00FF95] sm:text-right`}>Developed by MH Tech House</p>
             </div>
         </div>
