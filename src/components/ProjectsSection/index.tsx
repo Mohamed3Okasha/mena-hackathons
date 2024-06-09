@@ -21,10 +21,10 @@ export function ProjectsSection(){
             </p>
         </div>
         <div className={`flex flex-col md:flex-row justify-center gap-5`}>
-            <ProjectCard title={`Hackathons`} iconPath={hackathonsImgPath} iconBgColor={`sky`} altText={`hackathons image`}/>
-            <ProjectCard title={`Virtual Exchanges`} iconPath={virtualExchangeImgPath} iconBgColor={`red`} altText={`hackathons image`}/>
-            <ProjectCard title={`Green Tech Podcast`} iconPath={podcastImgPath} iconBgColor={`teal`} altText={`hackathons image`}/>
-
+            <ProjectCard title={`Hackathon Digital Solution`} iconPath={virtualExchangeImgPath} iconBgColor={`red`} altText={`hackathons image`}/>
+            <ProjectCard title={`Organising Hackathons`} iconPath={hackathonsImgPath} iconBgColor={`sky`} altText={`hackathons image`}/>
+            {/* <ProjectCard title={`Green Tech Podcast`} iconPath={podcastImgPath} iconBgColor={`teal`} altText={`hackathons image`}/> */}
+x
         </div>
     </div>
     )

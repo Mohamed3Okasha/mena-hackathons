@@ -1,4 +1,5 @@
 import './App.css';
+import { DemoSection } from './components/DemoSection';
 import { Footer } from './components/Footer';
 import { HeroSection } from './components/HeroSection';
 import {Navbar} from './components/Navbar';
@@ -12,7 +13,7 @@ export function App() {
     <Navbar />
     <HeroSection />
     <ProjectsSection />
-    <ServicesSection />
+    <DemoSection />
     <PartnersSection />
     <Footer />
     </>
