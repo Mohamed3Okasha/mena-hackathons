@@ -23,7 +23,6 @@ export function ProjectsSection(){
             <ProjectCard title={`Hackathon Digital Solution`} iconPath={virtualExchangeImgPath} iconBgColor={`red`} altText={`hackathons image`}/>
             <ProjectCard title={`Organising Hackathons`} iconPath={hackathonsImgPath} iconBgColor={`sky`} altText={`hackathons image`}/>
             {/* <ProjectCard title={`Green Tech Podcast`} iconPath={podcastImgPath} iconBgColor={`teal`} altText={`hackathons image`}/> */}
-x
         </div>
     </div>
     )
