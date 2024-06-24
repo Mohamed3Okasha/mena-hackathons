@@ -1,7 +1,6 @@
 import { ProjectCard } from "./project-card";
 import hackathonsImgPath from "../../assets/hackathons.svg";
 import virtualExchangeImgPath from "../../assets/virtual-exchange.svg";
-import podcastImgPath from "../../assets/podcast.svg";
 
 
 export function ProjectsSection(){
