@@ -1,20 +1,23 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import { DemoSection } from './components/DemoSection';
-import { Footer } from './components/Footer';
-import { HeroSection } from './components/HeroSection';
-import {Navbar} from './components/Navbar';
-import { PartnersSection } from './components/PartnersSection';
-import { ProjectsSection } from './components/ProjectsSection';
+import { Home } from './pages/Home';
+import { Sign } from './Sign';
 
 export function App() {
+const router = createBrowserRouter([
+  {
+    path: `/`,
+    element: <Home />
+  },
+  {
+    path: `/sign`,
+    element: <Sign />
+  },
+])
+
   return (
     <>
-    <Navbar />
-    <HeroSection />
-    <ProjectsSection />
-    <DemoSection />
-    <PartnersSection />
-    <Footer />
+    <RouterProvider router={router} />
     </>
   )
 }

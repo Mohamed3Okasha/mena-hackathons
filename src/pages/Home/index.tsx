@@ -1,0 +1,20 @@
+import { DemoSection } from "../../components/DemoSection";
+import { Footer } from "../../components/Footer";
+import { HeroSection } from "../../components/HeroSection";
+import { Navbar } from "../../components/Navbar";
+import { PartnersSection } from "../../components/PartnersSection";
+import { ProjectsSection } from "../../components/ProjectsSection";
+
+export function Home(){
+    return(
+        <>
+            <Navbar />
+            <HeroSection />
+            <ProjectsSection />
+            <DemoSection />
+            <PartnersSection />
+            <Footer />
+            
+        </>
+    )
+}
