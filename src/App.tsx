@@ -11,7 +11,9 @@ const router = createBrowserRouter([
   },
   {
     path: `/sign`,
-    element: <Sign />
+  {
+    path: `/untapped`,
+    element: <Event />
   },
 ])
 
