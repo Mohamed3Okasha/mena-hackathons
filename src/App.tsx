@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import { Home } from './pages/Home';
-import { Sign } from './Sign';
+import { Event } from './pages/Event';
 
 export function App() {
 const router = createBrowserRouter([
