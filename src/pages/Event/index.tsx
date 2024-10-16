@@ -1,22 +1,5 @@
 import { EventPage } from "./EventPage";
 
-const speakers = [
-    {
-      name: 'John Doe',
-      position: 'CEO, Company X',
-      photoUrl: 'https://example.com/john.jpg',
-    },
-    {
-      name: 'Jane Smith',
-      position: 'CTO, Startup Y',
-      photoUrl: 'https://example.com/jane.jpg',
-    },
-    {
-      name: 'Alice Johnson',
-      position: 'Lead Developer, Tech Z',
-      photoUrl: 'https://example.com/alice.jpg',
-    },
-  ];
 {/* <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScC96S9YAhfJr7J-PKJbREd8jKFJ9LjtV1gLpfcewMaGOLn_A/viewform?embedded=true" width="640" height="2231" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
 export function Event(){
     return(
@@ -31,7 +14,6 @@ export function Event(){
                               Innovation & Sustainability Workshops aimed at driving real-world impact.
                               🔗 Don’t miss out! Discover how you can tap into your potential and make a difference.
                             `}
-                // speakers={speakers}
                 googleFormUrl={"https://docs.google.com/forms/d/e/1FAIpQLScC96S9YAhfJr7J-PKJbREd8jKFJ9LjtV1gLpfcewMaGOLn_A/viewform?embedded=true"}
             />
         </>
