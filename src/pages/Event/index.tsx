@@ -1,21 +1,59 @@
-import { EventPage } from "./EventPage";
+import { Link } from "react-router-dom";
 
-{/* <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScC96S9YAhfJr7J-PKJbREd8jKFJ9LjtV1gLpfcewMaGOLn_A/viewform?embedded=true" width="640" height="2231" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
-export function Event(){
-    return(
-        <>
-            <EventPage
-                posterUrl="https://example.com/poster.jpg"
-                headline={`🌍 Unlocking Opportunities: Innovation, Intercultural Exchange & Sustainability! 🌱✨`}
-                description={`
-                              Join us at Untapped, where we’ll dive into the future of innovation, intercultural exchange, and sustainability. We are glad to host ErasmusDays and get to know more about the Erasmus programme and different funded mobilities like Training course, Youth Exchanges and Study Visits.
-                              🔓 Unlocking opportunities is at the heart of this gathering, connecting you with:
-                              Scholarship & Exchange Programs that open doors globally.
-                              Innovation & Sustainability Workshops aimed at driving real-world impact.
-                              🔗 Don’t miss out! Discover how you can tap into your potential and make a difference.
-                            `}
-                googleFormUrl={"https://docs.google.com/forms/d/e/1FAIpQLScC96S9YAhfJr7J-PKJbREd8jKFJ9LjtV1gLpfcewMaGOLn_A/viewform?embedded=true"}
-            />
-        </>
-    )
+type EventStatus = "upcoming" | "finished" | "running";
+
+interface EventCardProps {
+  imageUrl: string;
+  status: string;
+  title: string;
+  date: string; // format: "Month, Year"
+  location: string; // format: "City, Country"
+  tags: string[];
 }
+
+export function EventCard ({ imageUrl, status, title, date, location, tags, }: EventCardProps) {
+  return (
+    <Link to={` `} className="block p-5 w-max max-w-sm bg-card rounded-lg shadow-lg overflow-hidden">
+      {/* Image and Status Ribbon */}
+        <div className="relative">
+            <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
+            <div className="absolute top-2 -right-6 transform rotate-45 bg-card">
+                <span
+                className={`block px-4 py-1 text-xs uppercase text-white bg-${
+                    status === "upcoming"
+                    ? "blue-500"
+                    : status === "finished"
+                    ? "gray-500"
+                    : "green-500"
+                }`}
+                style={{
+                    clipPath: 'polygon(0 0, 100% 0, 85% 100%, 15% 100%)',
+                }}
+            >
+            {status}
+                </span>
+            </div>
+        </div>
+
+
+      {/* Card Content */}
+      <div className="pt-4">
+        <h2 className="text-2xl font-semibold text-accent">{title}</h2>
+        <p className="text-sm text-accent">{date}</p>
+        <p className="text-sm text-accent">{location}</p>
+        
+        {/* Tags */}
+        <div className="mt-3 flex justify-center space-x-2">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className="px-2 py-1 text-xs font-medium text-accent bg-secondary bg-opacity-10 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </Link>
+  );
+};
