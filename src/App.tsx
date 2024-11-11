@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import { Home } from './pages/Home';
 import { SignPage } from './pages/Sign';
-// import { Platform } from './pages/Platform';
+import { Platform } from './pages/Platform';
 // import { Event } from './pages/Event';
 
 export function App() {
@@ -15,10 +15,10 @@ const router = createBrowserRouter([
     path: `/sign`,
     element: <SignPage />
   },
-  // {
-  //   path: `/app`,
-  //   element: <Platform />
-  // },
+  {
+    path: `/app`,
+    element: <Platform />
+  },
   // {
   //   path: `/untapped`,
   //   element: <Event />
@@ -26,8 +26,8 @@ const router = createBrowserRouter([
 ])
 
   return (
-    <>
+    <div style={{ overflowX: 'hidden' }}>
       <RouterProvider router={router} />
-    </>
+    </div>
   )
 }

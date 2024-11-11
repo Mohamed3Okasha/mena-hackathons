@@ -3,6 +3,7 @@ import { useApolloClient, useMutation, gql } from '@apollo/client';
 import mhLogo from "../../assets/mh-logo-web.png";
 import { InputField } from './inputField';
 import { useNavigate } from 'react-router-dom';
+import { retrieveUserData } from '../../utils/auth';
 
 const GOOGLE_SIGN_USER = gql`
   mutation googleSignIn($idToken: String!) {
@@ -59,12 +60,7 @@ const storeUserData = (token: string, user: { firstName: string; lastName: strin
     localStorage.setItem('user', JSON.stringify(user));
 };
 
-const retrieveUserData = () => {
-  // Retrieve token and user info from localStorage
-  const token = localStorage.getItem('authToken');
-  const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null;
-  return { token, user };
-};
+
 
 
 export function SignPage () {

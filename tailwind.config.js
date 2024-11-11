@@ -9,7 +9,9 @@ export default {
       colors:{
         primary: `#293894`,
         secondary: `#13bc84`,
-        accent: ``,
+        accent: `#E2D8FD`,
+        sidebar: `#001B26`,
+        card: `#163241`,
       },
       margin:{
         '1/4': '25%',
