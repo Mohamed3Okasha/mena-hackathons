@@ -1,7 +1,7 @@
-import { EventCard } from "../Event";
+import { EventCard } from "../Event/EventCard";
 import eventImage from "../../assets/event-card-image.png"
 
-export function Events(){
+export function PlatformEvents(){
     const eventsData = [
         {
             imageUrl: eventImage,

@@ -3,7 +3,7 @@ import './App.css';
 import { Home } from './pages/Home';
 import { SignPage } from './pages/Sign';
 import { Platform } from './pages/Platform';
-// import { Event } from './pages/Event';
+import { EventPage } from './pages/Event/EventPage';
 
 export function App() {
 const router = createBrowserRouter([
@@ -17,12 +17,14 @@ const router = createBrowserRouter([
   },
   {
     path: `/app`,
-    element: <Platform />
+    element: <Platform />,
+    children: [
+      {
+        path: `events/:eventId`,
+        element: <EventPage />
+      }
+    ]
   },
-  // {
-  //   path: `/untapped`,
-  //   element: <Event />
-  // },
 ])
 
   return (

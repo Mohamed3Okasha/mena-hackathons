@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { FaBell, FaUserCircle, FaUser, FaCalendarAlt, FaSignOutAlt } from 'react-icons/fa';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import mgLogo from '../../assets/mh-logo-web.png';
-import { Events } from './platformEvents';
+import { PlatformEvents } from './platformEvents';
 import { retrieveUserData } from '../../utils/auth';
 
 export function Platform() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const isEventRoute = location.pathname.includes('/app/events/');
+
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [selectedMenu, setSelectedMenu] = useState<number>(0);
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
@@ -18,7 +21,7 @@ export function Platform() {
       navigate('/');
     };
     const sidebarItems = [
-        { name: 'Events', icon: <FaCalendarAlt />, content: <Events /> },
+        { name: 'Events', icon: <FaCalendarAlt />, content: <PlatformEvents /> },
         { name: 'Profile', icon: <FaUser />, content: 'Profile Content' },
         { name: 'Sign Out', icon: <FaSignOutAlt />, action: handleSignOut },
     ]
@@ -66,7 +69,6 @@ export function Platform() {
                 selectedMenu === index ? 'bg-primary bg-opacity-5' : ''
                 }`}
             >
-                
                 <span className="text-lg">{menu.icon}</span>
                 {/* Only show text when sidebar is open */}
                 {isSidebarOpen && <span className="hidden md:block">{menu.name}</span>}
@@ -108,7 +110,7 @@ export function Platform() {
 
         {/* Dynamic Content based on Sidebar selection */}
         <div className="flex-grow p-3 md:p-6 overflow-y-auto">
-            { sidebarItems[selectedMenu].content }
+            { isEventRoute? <Outlet /> : sidebarItems[selectedMenu].content }
         </div>
         </div>
     </div>
