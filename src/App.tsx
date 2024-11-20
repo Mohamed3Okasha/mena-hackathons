@@ -5,7 +5,9 @@ import { SignPage } from './pages/Sign';
 import { Platform } from './pages/Platform';
 import { EventPage } from './pages/Event/EventPage';
 import { PlatformEvents } from './pages/Platform/platformEvents';
-import { UserProfile } from './pages/Event/UserProfile';
+import { UserProfile } from './pages/User/UserProfile';
+import { ProfileId } from './pages/User/ProfileId';
+import { ProfileDetails } from './pages/User/ProfileDetails';
 
 export function App() {
 const router = createBrowserRouter([
@@ -27,7 +29,15 @@ const router = createBrowserRouter([
       },
       {
         path: `profile`,
-        element: <UserProfile />
+        element: <UserProfile />,
+        children: [
+          { path: `profile-id`,
+            element: <ProfileId />
+          },
+          { path: `profile-details`,
+            element: <ProfileDetails />
+          }
+        ]
       },
       {
         path: `events/:eventId`,

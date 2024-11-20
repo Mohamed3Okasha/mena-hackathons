@@ -1,4 +1,4 @@
-export function generateEventId(title: string): string {
+export function generateSubRoute(title: string): string {
     return title
         .toLowerCase() // Convert to lowercase
         .replace(/\s+/g, '-') // Replace spaces with hyphens

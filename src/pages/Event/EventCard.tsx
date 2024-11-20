@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { generateEventId } from "../../utils/functions";
+import { generateSubRoute } from "../../utils/functions";
 
 type EventStatus = "upcoming" | "finished" | "running";
 
@@ -14,7 +14,7 @@ interface EventCardProps {
 
 export function EventCard ({ imageUrl, status, title, date, location, tags, }: EventCardProps) {
   return (
-    <Link to={`/app/events/${generateEventId(title)}`} className="block p-5 w-max max-w-sm bg-card rounded-lg shadow-lg overflow-hidden">
+    <Link to={`/app/events/${generateSubRoute(title)}`} className="block p-5 w-max max-w-sm bg-card rounded-lg shadow-lg overflow-hidden">
       {/* Image and Status Ribbon */}
         <div className="relative">
             <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />

@@ -21,7 +21,7 @@ export function Platform() {
     };
     const sidebarItems = [
         { name: 'Events', route: `events`, icon: <FaCalendarAlt />},
-        { name: 'Profile', route: `profile`, icon: <FaUser />},
+        { name: 'Profile', route: `profile/profile-id`, icon: <FaUser />},
         { name: 'Sign Out', route:``, icon: <FaSignOutAlt />, action: handleSignOut },
     ]
     const handleMenuClick = (menu: number) => {
@@ -111,7 +111,7 @@ export function Platform() {
         </div>
 
         {/* Dynamic Content based on Sidebar selection */}
-        <div className="flex-grow p-3 md:p-6 overflow-y-auto">
+        <div className="flex flex-col gap-7 p-3 md:p-6 overflow-y-auto">
             <Outlet />
         </div>
         </div>
