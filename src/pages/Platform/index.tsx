@@ -3,7 +3,6 @@ import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { FaBell, FaUserCircle, FaUser, FaCalendarAlt, FaSignOutAlt } from 'react-icons/fa';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import mgLogo from '../../assets/mh-logo-web.png';
-import { PlatformEvents } from './platformEvents';
 import { retrieveUserData } from '../../utils/auth';
 
 export function Platform() {
@@ -21,9 +20,9 @@ export function Platform() {
       navigate('/');
     };
     const sidebarItems = [
-        { name: 'Events', icon: <FaCalendarAlt />, content: <PlatformEvents /> },
-        { name: 'Profile', icon: <FaUser />, content: 'Profile Content' },
-        { name: 'Sign Out', icon: <FaSignOutAlt />, action: handleSignOut },
+        { name: 'Events', route: `events`, icon: <FaCalendarAlt />},
+        { name: 'Profile', route: `profile`, icon: <FaUser />},
+        { name: 'Sign Out', route:``, icon: <FaSignOutAlt />, action: handleSignOut },
     ]
     const handleMenuClick = (menu: number) => {
         setSelectedMenu(menu);
@@ -58,20 +57,23 @@ export function Platform() {
             {sidebarItems.map((menu, index) => (
             <li
                 key={menu.name}
-                onClick={() => {
-                if (menu.action) {
-                    menu.action();
-                } else {
-                    handleMenuClick(index);
-                }
-                }}
-                className={`text-accent flex items-center space-x-3 p-2  ${isSidebarOpen? `px-9 justify-start` : `justify-center`} cursor-pointer transition duration-150 hover:bg-primary hover:bg-opacity-10 ${
-                selectedMenu === index ? 'bg-primary bg-opacity-5' : ''
-                }`}
+                className={``}
             >
-                <span className="text-lg">{menu.icon}</span>
-                {/* Only show text when sidebar is open */}
-                {isSidebarOpen && <span className="hidden md:block">{menu.name}</span>}
+                <Link 
+                    onClick={() => {
+                        if (menu.action) {
+                            menu.action();
+                        } else {
+                            handleMenuClick(index);
+                        }
+                    }}
+                    to={menu.route}
+                    className={`text-accent flex items-center space-x-3 ${isSidebarOpen? `px-9 justify-start` : `justify-center`} p-2  transition duration-150 hover:bg-primary hover:bg-opacity-10 ${selectedMenu === index ? 'bg-primary bg-opacity-5 opacity-100' : 'opacity-70'}`}
+                >
+                    <span className="text-lg">{menu.icon}</span>
+                    {/* Only show text when sidebar is open */}
+                    {isSidebarOpen && <span className="hidden md:block">{menu.name}</span>}
+                </Link>
             </li>
             ))}
         </ul>
@@ -110,7 +112,7 @@ export function Platform() {
 
         {/* Dynamic Content based on Sidebar selection */}
         <div className="flex-grow p-3 md:p-6 overflow-y-auto">
-            { isEventRoute? <Outlet /> : sidebarItems[selectedMenu].content }
+            <Outlet />
         </div>
         </div>
     </div>
