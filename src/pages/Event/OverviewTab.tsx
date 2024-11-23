@@ -12,7 +12,7 @@ export function OverviewTab({ sections }: OverviewProps) {
     <div className="y-4 space-y-6">
       {sections.map((section, index) => (
         <div key={index} className="text-left ">
-          <h2 className="text-lg font-semibold text-logo mb-2">
+          <h2 className="text-lg font-semibold text-primary mb-2">
             {section.title}
           </h2>
           <p className="justify- text-accent">{section.content}</p>

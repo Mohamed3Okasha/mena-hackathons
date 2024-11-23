@@ -77,7 +77,7 @@ export function EventPage() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-1 border-logo  ${
+              className={`px-4 py-1 border-primary  ${
                 activeTab === tab ? 'border-b-2' : ''
               }`}
             >

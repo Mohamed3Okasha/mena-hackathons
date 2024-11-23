@@ -88,7 +88,7 @@ export function SignPage () {
         },
       });
 
-      navigate(`/app`);
+      navigate(`/app/events`);
     }
   }, []);
 
