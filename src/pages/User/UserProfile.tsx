@@ -12,7 +12,7 @@ export function UserProfile(){
                 to={generateSubRoute(tab)}
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`w-full px-4 py-1 border-logo  ${
+                className={`w-full px-4 py-1 border-primary hover:bg-primary hover:bg-opacity-10 ${
                 activeTab === tab ? 'border-b-2' : ''
                 }`}
             >
@@ -20,9 +20,7 @@ export function UserProfile(){
             </Link>
             ))}
             </div>
-            <div className={``}>
                 <Outlet />
-            </div>
         </>
     )
     
