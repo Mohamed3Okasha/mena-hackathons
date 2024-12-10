@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { Timeline } from './Timeline';
 import eventImage from "../../assets/event-card-image.png"
 
 import { EventGallery } from './EventGallery';
 import { OverviewTab } from './OverviewTab';
+import ChallengesTab from './ChallengesTab';
 // Define the types for the components
 type Milestone = {
   milestone: string;
@@ -12,17 +13,17 @@ type Milestone = {
   isPassed?: boolean;
 };
 
-type EventPageProps = {
-  title: string;
-  date: string;
-  location: string;
-  milestones: Milestone[];
-  galleryImages: string[];
-};
+// type EventPageProps = {
+//   title: string;
+//   date: string;
+//   location: string;
+//   milestones: Milestone[];
+//   galleryImages: string[];
+// };
 
 export function EventPage() {
   const [activeTab, setActiveTab] = useState('Overview');
-  const { eventId } = useParams<{ eventId: string }>();
+  // const { eventId } = useParams<{ eventId: string }>();
 
   const sampleEvent = {
     title: 'Eco-Hackathon Misr',
@@ -59,7 +60,7 @@ export function EventPage() {
       case 'Overview':
         return <OverviewTab sections={sampleEvent.exampleSections} />;
       case 'Challenges':
-        return <p>This is the challenges content.</p>;
+        return <ChallengesTab /> ;
       case 'Teams':
         return <p>This is the teams content.</p>;
       default:
@@ -73,7 +74,7 @@ export function EventPage() {
       <div className="flex flex-col-reverse lg:flex-row justify-between lg:items-start lg:items-center">
         {/* Tabs */}
         <div className="flex flex-wrap space-x-4 items-center justify-center">
-          {['Overview', 'Challenges', 'Teams'].map((tab) => (
+          {['Overview', 'Challenges', 'Teams/Projects'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
