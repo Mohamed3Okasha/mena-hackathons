@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { generateSubRoute } from "../../utils/functions";
 
-type EventStatus = "upcoming" | "finished" | "running";
+type EventStatus = "ongoing" | "upcoming" | "finished";
 
 interface EventCardProps {
   imageUrl: string;
-  status: string;
+  status: EventStatus;
   title: string;
   date: string; // format: "Month, Year"
   location: string; // format: "City, Country"
@@ -18,21 +18,21 @@ export function EventCard ({ imageUrl, status, title, date, location, tags, }: E
       {/* Image and Status Ribbon */}
         <div className="relative">
             <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
-            <div className="absolute top-2 -right-6 transform rotate-45 bg-card">
-                <span
-                className={`block px-4 py-1 text-xs uppercase text-white bg-${
-                    status === "upcoming"
-                    ? "blue-500"
-                    : status === "finished"
-                    ? "gray-500"
-                    : "green-500"
-                }`}
-                style={{
-                    clipPath: 'polygon(0 0, 100% 0, 85% 100%, 15% 100%)',
-                }}
-            >
-            {status}
-                </span>
+            <div className={`absolute top-2 -right-6 transform rotate-45 bg-card`}>
+              <span
+              className={`block px-4 py-1 text-xs uppercase ${
+                status === 'ongoing'
+                ? 'text-primary'
+                : status === 'upcoming'
+                ? 'text-secondary'
+                : 'text-white'
+              }`}
+              style={{
+                  clipPath: 'polygon(0 0, 100% 0, 85% 100%, 15% 100%)',
+              }}
+              >
+                  {status}
+              </span>
             </div>
         </div>
 

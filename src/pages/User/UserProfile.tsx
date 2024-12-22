@@ -3,11 +3,11 @@ import { Link, Outlet } from "react-router-dom";
 import { generateSubRoute } from "../../utils/functions";
 
 export function UserProfile(){
-    const [activeTab, setActiveTab] = useState('Profile ID');
+    const [activeTab, setActiveTab] = useState('Profile Details');
     return(
         <>
             <div className="flex justify-between space-x-4 items-center justify-center">
-            {['Profile ID', 'Profile Details'].map((tab) => (
+            {['Profile Details', 'Profile ID'].map((tab) => (
             <Link
                 to={generateSubRoute(tab)}
                 key={tab}
