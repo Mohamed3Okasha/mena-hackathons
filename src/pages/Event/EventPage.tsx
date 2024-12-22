@@ -7,11 +7,11 @@ import { EventGallery } from './EventGallery';
 import { OverviewTab } from './OverviewTab';
 import ChallengesTab from './ChallengesTab';
 // Define the types for the components
-type Milestone = {
-  milestone: string;
-  date: string;
-  isPassed?: boolean;
-};
+// type Milestone = {
+//   milestone: string;
+//   date: string;
+//   isPassed?: boolean;
+// };
 
 // type EventPageProps = {
 //   title: string;

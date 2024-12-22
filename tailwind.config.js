@@ -10,7 +10,7 @@ export default {
         primary: `#44C3F4`,
         secondary: `#13bc84`,
         accent: `#E2D8FD`,
-        sidebar: `#001B26`,
+        sidebar: `#00222F`,
         card: `#163241`,
       },
       margin:{
