@@ -3,7 +3,7 @@ import { useApolloClient, useMutation, gql } from '@apollo/client';
 import mhLogo from "../../assets/mh-logo-web.png";
 import { InputField } from './inputField';
 import { useNavigate } from 'react-router-dom';
-import { retrieveUserData } from '../../utils/auth';
+import { storeUserData, retrieveUserData } from '../../utils/auth';
 
 const GOOGLE_SIGN_USER = gql`
   mutation googleSignIn($idToken: String!) {
@@ -53,15 +53,6 @@ const USER_DATA = gql`
 // type SignProps = {
 //     isSignUp: boolean
 // }
-
-const storeUserData = (token: string, user: { firstName: string; lastName: string; email: string }) => {
-    // Store token and user info in localStorage
-    localStorage.setItem('authToken', token);
-    localStorage.setItem('user', JSON.stringify(user));
-};
-
-
-
 
 export function SignPage () {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -124,7 +115,7 @@ export function SignPage () {
         const { token, user} = data.googleSignIn;
 
         // Handle the returned user and token, e.g., save the token
-        storeUserData(token, user);
+        storeUserData({token: token, user: user});
 
         //Update Apollo Client and redirect to App page the user or update your app state
         if(token && user && user.email){

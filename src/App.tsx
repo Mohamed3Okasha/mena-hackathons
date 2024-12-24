@@ -8,8 +8,11 @@ import { PlatformEvents } from './pages/Platform/platformEvents';
 import { UserProfile } from './pages/User/UserProfile';
 import { ProfileId } from './pages/User/ProfileId';
 import { ProfileDetails } from './pages/User/ProfileDetails';
+import { useTranslation } from 'react-i18next';
 
 export function App() {
+  const [, i18n] = useTranslation("global");
+  
 const router = createBrowserRouter([
   {
     path: `/`,
@@ -48,7 +51,7 @@ const router = createBrowserRouter([
 ])
 
   return (
-    <div style={{ overflowX: 'hidden' }}>
+    <div style={{ overflowX: 'hidden' }} dir={i18n.language === `ar` ? `rtl` : `ltr`}>
       <RouterProvider router={router} />
     </div>
   )
