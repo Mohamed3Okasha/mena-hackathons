@@ -119,8 +119,8 @@ export function ProfileDetails(){
                 {...formik.getFieldProps("gender")}
               >
                 <option value="">Select Gender</option>
-                <option value="Male">Male</option>
                 <option value="Female">Female</option>
+                <option value="Male">Male</option>
               </select>
               {formik.touched.gender && formik.errors.gender && (
                 <p className="text-red-500 text-xs mt-1">{formik.errors.gender}</p>

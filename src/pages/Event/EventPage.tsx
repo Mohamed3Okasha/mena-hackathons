@@ -5,7 +5,8 @@ import eventImage from "../../assets/event-card-image.png"
 
 import { EventGallery } from './EventGallery';
 import { OverviewTab } from './OverviewTab';
-import ChallengesTab from './ChallengesTab';
+import { ChallengesTab } from './ChallengesTab';
+import { TeamsTab } from './Teams';
 // Define the types for the components
 // type Milestone = {
 //   milestone: string;
@@ -61,8 +62,9 @@ export function EventPage() {
         return <OverviewTab sections={sampleEvent.exampleSections} />;
       case 'Challenges':
         return <ChallengesTab /> ;
-      case 'Teams':
-        return <p>This is the teams content.</p>;
+      case 'Teams/Projects':
+        // return <p>This is the teams content.</p>;
+        return <TeamsTab />
       default:
         return null;
     }

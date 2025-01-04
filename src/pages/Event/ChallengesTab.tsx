@@ -44,6 +44,7 @@ const challengesData = [
 ];
 
 export function ChallengesTab(){
+
   return (
     <div className={`flex flex-col gap-8`}>
       {challengesData.map((challenge, index) => (
@@ -52,5 +53,3 @@ export function ChallengesTab(){
     </div>
   );
 };
-
-export default ChallengesTab;
