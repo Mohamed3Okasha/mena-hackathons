@@ -16,7 +16,7 @@ export function Navbar(){
         if(language){
             i18n.changeLanguage(language);
         }
-    })
+    }, [])
    
     return(
         <nav className="dark:bg-gray-900">

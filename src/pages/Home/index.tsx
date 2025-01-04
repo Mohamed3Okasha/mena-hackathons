@@ -14,15 +14,20 @@ export function Home() {
 
     useEffect(() => {
         const handlePerformance = () => {
-            const perfEntries = performance.getEntriesByType("resource");
-            console.log("Loaded resources:", perfEntries);
-            setLoading(false);
+          setLoading(false); // Update state only when the load event fires
         };
-
-        window.addEventListener("load", handlePerformance);
-
+    
+        if (document.readyState === "complete") {
+          // If the page is already fully loaded, handle performance immediately
+          handlePerformance();
+        } else {
+          // Otherwise, wait for the load event
+          window.addEventListener("load", handlePerformance);
+        }
+    
         return () => {
-            window.removeEventListener("load", handlePerformance);
+          // Cleanup event listener on unmount
+          window.removeEventListener("load", handlePerformance);
         };
     }, []);
 
