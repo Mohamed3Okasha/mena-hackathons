@@ -4,9 +4,10 @@ import { TeamMember } from './types';
 
 interface TeamViewProps {
   teamName: string;
-  teamCode: string;
+  teamCode?: string;
   members: TeamMember[];
-  onLeaveTeam: () => void;
+  onLeaveTeam?: () => void;
+  viewOnly?: boolean;
 }
 
 export function TeamView({
@@ -14,25 +15,29 @@ export function TeamView({
   teamCode,
   members,
   onLeaveTeam,
+  viewOnly
 }: TeamViewProps) {
   return (
-    <div className="p-">
+    <>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font">{teamName}</h1>
         <p className={`text-sm`}>3 Members</p>
-        <button
-          onClick={onLeaveTeam}
-          className="text-sm text-red-600 hover:text-red-700"
-        >
-          Leave Team
-        </button>
+        {!viewOnly && 
+          <button
+            onClick={onLeaveTeam}
+            className="text-sm text-red-600 hover:text-red-700"
+          >
+            Leave Team
+          </button>
+        }
       </div>
-
-      <div className="mb-6 flex">
-        <p className="text-accent bg-card p-3 rounded border-[.px] border-primary">
-          Team Code: <span className="font-medium">{teamCode}</span>
-        </p>
-      </div>
+      {!viewOnly &&
+        <div className="mb-6 flex">
+          <p className="text-accent bg-card p-3 rounded border-[.px] border-primary">
+            Team Code: <span className="font-medium">{teamCode}</span>
+          </p>
+        </div>
+      }
 
       <div className={`flex flex-col gap-3`}>
         <h2 className="text-xl font-semibold text-left">Team Members</h2>
@@ -42,7 +47,7 @@ export function TeamView({
           ))}
         </div>
       </div>
-      <ProjectSubmissionForm challenges={[`Smart Cities`, `Water Secuirty`]} />
-    </div>
+      <ProjectSubmissionForm viewOnly={viewOnly} challenges={[`Smart Cities`, `Water Secuirty`]} />
+    </>
   );
 }

@@ -13,7 +13,7 @@ export function MemberCard({ photoUrl, name, role, position }: TeamMember) {
             className="w-full h-full rounded-full object-cover"
           />
         )}
-        <p className={`text-xs`}>({role})</p>
+        <p className={`text-xs text-center`}>({role})</p>
       </div>
       <h3 className="">
         {name} <span className="text-xs text-primary">(you)</span>

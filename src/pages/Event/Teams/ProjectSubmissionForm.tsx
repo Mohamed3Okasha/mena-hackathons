@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-export function ProjectSubmissionForm({ challenges }: { challenges: string[] }) {
+export function ProjectSubmissionForm({ challenges, viewOnly }: { challenges: string[], viewOnly?: boolean }) {
   const validationSchema = Yup.object({
     projectName: Yup.string().required("Project Name is required"),
     challenge: Yup.string().required("Please select a challenge"),
@@ -36,27 +36,29 @@ export function ProjectSubmissionForm({ challenges }: { challenges: string[] }) 
   });
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-4">
+    <div className="text-left max-w-4xl mx-auto mt-10 p-4">
       <form onSubmit={formik.handleSubmit} className="space-y-8">
-        <h1 className="text-2xl font-bold text-primary mb-4">Project Submission Form</h1>
+        <h1 className="text-2xl font-bold text-primary mb-4">Project Details</h1>
         {/* Project Details */}
         <div className="border border-accent/[.3] text-accent rounded-xl p-4">
           <div className="grid gap-4">
             <div>
-              <label className="block mb-1 text-left">Project Name</label>
+              <label className="block mb-1">Project Name</label>
               <input
+                readOnly={viewOnly}
                 type="text"
-                className="w-full rounded bg-card text-accent text-sm text-sm p-2 focus:outline-none"
+                className={`w-full rounded bg-card text-accent text-sm text-sm p-2 focus:outline-none`}
                 {...formik.getFieldProps("projectName")}
               />
-              {formik.touched.projectName && formik.errors.projectName && (
+              {!viewOnly&&formik.touched.projectName && formik.errors.projectName && (
                 <p className="text-red-500 text-xs mt-1">{formik.errors.projectName}</p>
               )}
             </div>
             <div>
-              <label className="block mb-1 text-left">Challenge</label>
+              <label className="block mb-1">Challenge</label>
               <select
-                className="w-full rounded bg-card text-accent text-sm text-sm p-2 focus:outline-none"
+                disabled={viewOnly}
+                className={`w-full rounded bg-card text-accent text-sm text-sm p-2 focus:outline-none`}
                 {...formik.getFieldProps("challenge")}
               >
                 <option value="">Select Challenge</option>
@@ -66,29 +68,31 @@ export function ProjectSubmissionForm({ challenges }: { challenges: string[] }) 
                   </option>
                 ))}
               </select>
-              {formik.touched.challenge && formik.errors.challenge && (
+              {!viewOnly&&formik.touched.challenge && formik.errors.challenge && (
                 <p className="text-red-500 text-xs mt-1">{formik.errors.challenge}</p>
               )}
             </div>
             <div>
-              <label className="block mb-1 text-left">Video Link</label>
+              <label className="block mb-1">Video Link</label>
               <input
+                readOnly={viewOnly}
                 type="url"
-                className="w-full rounded bg-card text-accent text-sm text-sm p-2 focus:outline-none"
+                className={`w-full rounded bg-card text-accent text-sm text-sm p-2 focus:outline-none`}
                 {...formik.getFieldProps("videoLink")}
               />
-              {formik.touched.videoLink && formik.errors.videoLink && (
+              {!viewOnly&&formik.touched.videoLink && formik.errors.videoLink && (
                 <p className="text-red-500 text-xs mt-1">{formik.errors.videoLink}</p>
               )}
             </div>
             <div>
-              <label className="block mb-1 text-left">GitHub Link</label>
+              <label className="block mb-1">GitHub Link</label>
               <input
+                readOnly={viewOnly}
                 type="url"
-                className="w-full rounded bg-card text-accent text-sm text-sm p-2 focus:outline-none"
+                className={`w-full rounded bg-card text-accent text-sm text-sm p-2 focus:outline-none`}
                 {...formik.getFieldProps("githubLink")}
               />
-              {formik.touched.githubLink && formik.errors.githubLink && (
+              {!viewOnly&&formik.touched.githubLink && formik.errors.githubLink && (
                 <p className="text-red-500 text-xs mt-1">{formik.errors.githubLink}</p>
               )}
             </div>
@@ -101,26 +105,30 @@ export function ProjectSubmissionForm({ challenges }: { challenges: string[] }) 
               { label: "Technologies/Tools", field: "technologies" },
             ].map(({ label, field }) => (
               <div key={field}>
-                <label className="block mb-1 text-left">{label}</label>
+                <label className="block mb-1">{label}</label>
                 <textarea
+                  readOnly={viewOnly}
                   rows={5}
-                  className="w-full rounded bg-card text-accent text-sm text-sm p-2 focus:outline-none"
+                  className={`w-full rounded bg-card text-accent text-sm text-sm p-2 focus:outline-none`}
                   {...formik.getFieldProps(field)}
                 ></textarea>
-                {formik.touched[field as keyof typeof formik.touched] && formik.errors[field as keyof typeof formik.errors] &&
+                {!viewOnly&&formik.touched[field as keyof typeof formik.touched] && formik.errors[field as keyof typeof formik.errors] &&
                   (<p className="text-red-500 text-xs mt-1">
                     {formik.errors[field as keyof typeof formik.errors]}
                   </p>)}
               </div>
             ))}
-            <div>
-              <button
-                type="submit"
-                className="bg-primary text-white rounded-xl px-6 py-3 hover:bg-opacity-95"
-              >
-                Save Project
-              </button>
-            </div>
+            {!viewOnly &&
+              <div>
+                <button
+                  disabled={viewOnly}
+                  type="submit"
+                  className="bg-primary text-white rounded-xl px-6 py-3 hover:bg-opacity-95"
+                >
+                  Save Project
+                </button>
+              </div>
+            }
           </div>
 
         </div>

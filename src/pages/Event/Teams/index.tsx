@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MyTeamTab } from './MyTeamTab';
+import { ProjectsSubTab } from './ProjectsSubTab';
 
 
 export function TeamsTab() {
@@ -9,7 +10,7 @@ export function TeamsTab() {
             case 'My Team':
             return <MyTeamTab /> ;
             case 'All submitted projects':
-            return `submitted projects` ;
+            return <ProjectsSubTab /> ;
             default:
             return null;
         }
