@@ -7,6 +7,9 @@ import { EventGallery } from './EventGallery';
 import { OverviewTab } from './OverviewTab';
 import { ChallengesTab } from './ChallengesTab';
 import { TeamsTab } from './Teams';
+import * as Yup from "yup";
+import { GeneralApplicationForm } from '../../components/GeneralApplication';
+
 // Define the types for the components
 // type Milestone = {
 //   milestone: string;
@@ -25,6 +28,7 @@ import { TeamsTab } from './Teams';
 export function EventPage() {
   const [activeTab, setActiveTab] = useState('Overview');
   // const { eventId } = useParams<{ eventId: string }>();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const sampleEvent = {
     title: 'Eco-Hackathon Misr',
@@ -43,17 +47,17 @@ export function EventPage() {
       eventImage,
       eventImage,
     ],
-    exampleSections : [
+    exampleSections: [
       { title: 'About the Event', content: 'Join Shape Hackathon and lets transform the industry through the power of generative AI. In this virtual event, you will have 24 hours to propose a solution that transforms the digital experience of millions of people. Here, you will also learn from world-class mentors and have the opportunity to interact with recognized professionals and leading tech companies.' },
-      { title: 'Eligibility', content: 'You can participate individually or in a group (up to 5 people) from anywhere in the world. The team must have multiple skills to develop a comprehensive solution, preferably having profiles such as Data Specialist, Domain Expert, Software Specialist, UX/UI Specialist. Also, you need to be 18 or older, have creativity, eagerness, and a positive attitude.' }, 
+      { title: 'Eligibility', content: 'You can participate individually or in a group (up to 5 people) from anywhere in the world. The team must have multiple skills to develop a comprehensive solution, preferably having profiles such as Data Specialist, Domain Expert, Software Specialist, UX/UI Specialist. Also, you need to be 18 or older, have creativity, eagerness, and a positive attitude.' },
       { title: 'Tracks', content: 'AI, Cybersecurity, IOT, Cloud' },
-      {title: 'Judging Criteria', content: 'Innovation, Working Model, Team Work'},
+      { title: 'Judging Criteria', content: 'Innovation, Working Model, Team Work' },
       { title: 'Prizes', content: 'Information on the prizes available for winners.' },
     ]
   };
   const openRegistrationForm = () => {
     // Handle form modal logic here
-    alert('Open registration form');
+    setIsModalOpen(true);
   };
 
   const renderContent = () => {
@@ -61,7 +65,7 @@ export function EventPage() {
       case 'Overview':
         return <OverviewTab sections={sampleEvent.exampleSections} />;
       case 'Challenges':
-        return <ChallengesTab /> ;
+        return <ChallengesTab />;
       case 'Teams/Projects':
         // return <p>This is the teams content.</p>;
         return <TeamsTab />
@@ -80,28 +84,82 @@ export function EventPage() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-1 border-primary  ${
-                activeTab === tab ? 'border-b-2' : ''
-              }`}
+              className={`px-4 py-1 border-primary  ${activeTab === tab ? 'border-b-2' : ''
+                }`}
             >
               {tab}
             </button>
           ))}
-          <button
-            onClick={openRegistrationForm}
-            className="px-2 py-2 bg-[#00FF95] text-primary text-sm shadow-md  rounded-lg"
-          >
-            Apply Now
-          </button>
         </div>
 
         {/* Event Details Card */}
-        <div className="p-4 px-6 lg:mr-8 rounded-lg shadow-md lg:w-max lg:w-auto flex flex-col items-center">
+        <div className="bg-sidebar p-4 px-6 lg:mr-8 rounded-lg shadow-md lg:w-max lg:w-auto flex flex-col gap-2 items-center">
           <h2 className="text-xl lg:text-3xl font-semibold">{sampleEvent.title}</h2>
-          <div className="flex items-center space-x-2 mt-2 text-accent">
+          <div className="flex items-center space-x-2 text-accent">
             <span>{sampleEvent.date} - </span>
             <span>{sampleEvent.location}</span>
           </div>
+          <button
+            onClick={openRegistrationForm}
+            className="px-2 py-2 bg-[#00FF95] text-card text-sm shadow-md  rounded-lg"
+          >
+            Apply Now
+          </button>
+          <span className={`text-sm`}>Open for
+            Speakers, Menotrs, Participants</span>
+          {isModalOpen &&
+            (<div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+              <div className="bg-sidebar text-accent w-3/4 rounded-lg shadow-lg p-6 max-h-[90vh] overflow-y-auto">
+                {/* Top Section */}
+                <div className="flex justify-between items-center mb-4">
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="flex items-center text-sm"
+                  >
+                    <span className="pr-2">&larr;</span> <span className={`hover:underline underline-offset-4`}>Back</span>
+                  </button>
+                </div>
+                <GeneralApplicationForm
+                  eventName="Eco-Hackathon Misr"
+                  eventDates="December 1-3, 2024"
+                  questions={[
+                    {
+                      id: "name",
+                      type: "field",
+                      label: "Full Name",
+                      validation: Yup.string().required("Full Name is required"),
+                    },
+                    {
+                      id: "email",
+                      type: "field",
+                      label: "Email Address",
+                      validation: Yup.string().email("Invalid email").required("Email is required"),
+                    },
+                    {
+                      id: "motivation",
+                      type: "textarea",
+                      label: "Why do you want to join this hackathon?",
+                      validation: Yup.string().required("Motivation is required"),
+                    },
+                    {
+                      id: "category",
+                      type: "select",
+                      label: "Which category are you applying for?",
+                      options: ["Sustainability", "Smart Cities", "Renewable Energy"],
+                      validation: Yup.string().required("Please select a category"),
+                    },
+                    {
+                      id: "priorExperience",
+                      type: "radio",
+                      label: "Do you have prior hackathon experience?",
+                      options: ["Yes", "No", "Maybe", "LEt's try"],
+                      validation: Yup.string().required("This field is required"),
+                    },
+                  ]}
+                />
+              </div>
+            </div>)
+          }
         </div>
       </div>
 
