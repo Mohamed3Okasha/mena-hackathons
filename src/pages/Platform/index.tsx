@@ -21,7 +21,7 @@ export function Platform() {
     };
     const sidebarItems = [
         { name: 'Events', route: `events`, icon: <FaCalendarAlt />},
-        { name: 'Profile', route: `profile/profile-id`, icon: <FaUser />},
+        { name: 'Profile', route: `profile/profile-details`, icon: <FaUser />},
         { name: 'Sign Out', route:``, icon: <FaSignOutAlt />, action: handleSignOut },
     ]
     const handleMenuClick = (menu: number) => {
