@@ -6,7 +6,7 @@ export function PlatformEvents(){
         {
             imageUrl: eventImage,
             status: `upcoming`,
-            title: `RUW Hackathon`,
+            title: `EcoHackathon Bahrain`,
             date: `Feb, 2025`, // format: "Month, Year"
             location: `Manama, Bahrain`, // format: "City, Country"
             tags: [`Women Empoerment`, `Education`],
@@ -22,32 +22,24 @@ export function PlatformEvents(){
         {
             imageUrl: eventImage,
             status: `upcoming`,
-            title: `Eco-Hackathon Misr`,
-            date: `Feb, 2025`, // format: "Month, Year"
+            title: `NEOM Competition`,
+            date: `April, 2025`, // format: "Month, Year"
+            location: `Riyadh, KSA`, // format: "City, Country"
+            tags: [`Urban Development`, `Smart Cities`],
+        },
+        {
+            imageUrl: eventImage,
+            status: `upcoming`,
+            title: `NEOM Competition`,
+            date: `April, 2025`, // format: "Month, Year"
             location: `Riyadh, KSA`, // format: "City, Country"
             tags: [`Urban Development`, `Smart Cities`],
         }
         ,
-        {
-            imageUrl: eventImage,
-            status: `upcoming`,
-            title: `Eco-Hackathon Misr`,
-            date: `Feb, 2025`, // format: "Month, Year"
-            location: `Riyadh, KSA`, // format: "City, Country"
-            tags: [`Urban Development`, `Smart Cities`],
-        }
         ,
-        {
-            imageUrl: eventImage,
-            status: `upcoming`,
-            title: `Eco-Hackathon Misr`,
-            date: `Feb, 2025`, // format: "Month, Year"
-            location: `Riyadh, KSA`, // format: "City, Country"
-            tags: [`Urban Development`, `Smart Cities`],
-        }
     ]
     return(
-        <div className={`flex flex-wrap gap-7 justify-center`}>
+        <div className={`flex flex-wrap gap-11 justify-center`}>
             {eventsData.map((eventData: any, index: number) => (
                 <EventCard {...eventData} key={index }/>))
             }

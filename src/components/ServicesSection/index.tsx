@@ -1,31 +1,67 @@
-import { ServiceCard } from "./service-card";
-import developmentIconPath from "../../assets/development-icon.svg";
-import uiuxIconPath from "../../assets/ui-ux-icon.svg";
-import graphicDesignIconPath from "../../assets/graphic-design-icon.svg";
+import { ServiceCard } from "./ServiceCard";
 
+export function ServicesSection() {
+  const services = [
+    {
+      id: 1,
+      headline: "List The Hackathon",
+      cost: "Free Listing",
+      options: [
+        { id: 1, text: "Access to our Community" },
+        { id: 2, text: "Wider reach with Ecosystem" },
+        { id: 3, text: "Newsletter Feature" },
+      ],
+    },
+    {
+      id: 2,
+      headline: "Manage The Hackathon",
+      cost: "Paid Subscription",
+      options: [
+        { id: 1, text: "Full Digital Solution" },
+        { id: 2, text: "End-to-End Management" },
+        { id: 3, text: "Real-Time Analytics" },
+        { id: 4, text: "Customizable Platform" },
+      ],
+    },
+    {
+      id: 3,
+      headline: "Organise The Hackathon",
+      cost: "Paid Package",
+      options: [
+        { id: 1, text: "Tailored Support from A to Z" },
+        { id: 2, text: "Comprehensive Marketing and PR" },
+        { id: 3, text: "On-Site Support" },
+        { id: 4, text: "Detailed Post-Event Report" },
+      ],
+    },
+  ];
 
+  return (
+    <section className="sm:px-[15%] py-12 px-auto flex flex-col gap-11">
+      {/* <h2 className="text-center text-3xl text-white font-bold mb-8">Our Services</h2> */}
+      <h1 className={`text-3xl font-semibold`}><span className={`text-primary`}>Our </span>Services </h1>
 
-export function ServicesSection(){
-    return(
-        <div className={`p-5 sm:px-20 sm:py-10 my-auto`} id={`services`}>
-            <div className={`mb-3`}>
-                <h1 className="text-3xl lg:text-4xl font-semibold leading-none mb-3">
-                    <span className={`mr-3`} >
-                        Our
-                    </span> 
-                    <span className={`text-[#00FF95]`}>
-                        Tech House
-                    </span>
-                </h1>
-                <p className={`font-light text-1xl text-[#CECED0]`}>
-                    We work collectively, together we’re brighter!
-                </p>
-            </div>
-            <div className={`flex flex-col md:flex-row justify-center gap-5`}>
-                <ServiceCard title={`Development`} subTitle={`Create a platform with the best and coolest quality from us`} iconPath={developmentIconPath} altText={`icon`} iconBgColor={`teal`}/>
-                <ServiceCard title={`UI/UX Design`} subTitle={`We provide UI/UX Design services, and of course with the best quality`} iconPath={uiuxIconPath} altText={`icon`} iconBgColor={`red`}/>
-                <ServiceCard title={`Graphic Design`} subTitle={`We provide Graphic Design services, with the best designers`} iconPath={graphicDesignIconPath} altText={`icon`} iconBgColor={`sky`}/>
-            </div>
-        </div>
-    )
-}
+      <div className="grid sm:grid-cols-3 gap-11 justify-center">
+        {services.map((service) => (
+          <ServiceCard
+            key={service.id}
+            headline={service.headline}
+            options={service.options}
+            cost={service.cost}
+          />
+        ))}
+      </div>
+      <div className={`mt-10 flex flex-col items-center`}>
+        <h1 className="text- text-lg lg:text-2xl sm:font-semibold leading-none mb-3">
+          Interested in one of our services?
+          <span className={`block mt-5 text-xl font-extralight sm:font-normal`}>
+            Write to us at: <a href={`mailto:partner@menahackathons.com`} target={`blank`} className={`text-primary`}>
+              partner@menahackathons.com
+            </a>
+          </span>
+        </h1>
+
+      </div>
+    </section >
+  );
+};

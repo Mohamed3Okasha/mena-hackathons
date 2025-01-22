@@ -1,6 +1,7 @@
 {
     "navbar": {
         "brandName": "MENA Hackathons",
+        "selectedLanguage": "Language",
         "home": "Home",
         "about": "About",
         "services": "Services",

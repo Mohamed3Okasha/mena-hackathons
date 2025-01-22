@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { DemoSection } from "../../components/DemoSection";
 import { Footer } from "../../components/Footer";
 import { HeroSection } from "../../components/HeroSection";
 import { CircleLoader } from "../../components/Loading";
 import { Navbar } from "../../components/Navbar";
 import { PartnersSection } from "../../components/PartnersSection";
-import { ProjectsSection } from "../../components/ProjectsSection";
+import { HomePageEvents } from "./Events";
+import { ServicesSection } from "../../components/ServicesSection";
 
 import mhLogo from "../../assets/mh-logo-web.png"
 
@@ -39,8 +39,8 @@ export function Home() {
                 <>
                     <Navbar />
                     <HeroSection />
-                    <ProjectsSection />
-                    <DemoSection />
+                    <HomePageEvents />
+                    <ServicesSection />
                     <PartnersSection />
                     <Footer />
                 </>

@@ -1,6 +1,7 @@
 {
     "navbar": {
         "brandName": "مينا هاكاثونز",
+        "selectedLanguage": "اللغة",
         "home": "الرئيسية",
         "about": "عن الشركة",
         "services": "الخدمات",

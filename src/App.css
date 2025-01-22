@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar on WebKit browsers */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Hide scrollbar on IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar on Firefox */
+}
