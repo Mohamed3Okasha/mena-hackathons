@@ -46,3 +46,27 @@ export function PlatformEvents(){
         </div>
     )
 }
+
+interface eventData{
+    imageUrl: string,
+    status: string,
+    title: string,
+    date: string,
+    location: string,
+    tags: string [],
+}
+
+interface CollectionEventsProps{
+    eventsData: eventData[]
+}
+
+export function CollectionEvents({eventsData}: CollectionEventsProps){
+    
+    return(
+        <div className={`flex flex-wrap gap-14 justify-center p-2 sm:p-0`}>
+            {eventsData.map((eventData: any, index: number) => (
+                <EventCard {...eventData} key={index }/>))
+            }
+        </div>
+    )
+}

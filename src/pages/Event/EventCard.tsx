@@ -14,7 +14,7 @@ interface EventCardProps {
 
 export function EventCard ({ imageUrl, status, title, date, location, tags, }: EventCardProps) {
   return (
-    <Link to={`${generateSubRoute(title)}`} className="block p-5 w-max max-w-sm bg-card rounded-lg shadow-lg overflow-hidden">
+    <Link to={`${generateSubRoute(title)}`} className="flex flex-col p-5 max-w-sm bg-card rounded-lg shadow-lg overflow-hidden">
       {/* Image and Status Ribbon */}
         <div className="relative">
             <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
