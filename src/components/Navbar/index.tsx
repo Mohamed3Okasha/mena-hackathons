@@ -23,9 +23,9 @@ export function Navbar() {
             <div className="w-screen absolute flex items-center justify-between px-3 sm:px-[10%]  lg:mx-auto py-3">
                 <a href="#" className="w-fit flex items-center">
                     <img src={mhLogo} className="h-16 mr-3" alt="MENA Hackathons Logo" />
-                    <div className={`flex flex-col`}>
+                    {/* <div className={`flex flex-col`}>
                         <span className="hidden lg:inline self-center text-xl font-semibold whitespace-nowrap dark:text-white">{t("navbar.brandName")}</span>
-                    </div>
+                    </div> */}
                 </a>
                 <div>
                     {/* <span>{t("navbar.selectedLanguage")} : </span> */}

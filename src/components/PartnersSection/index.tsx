@@ -7,6 +7,7 @@ import erasmusLogo from "../../assets/erasmus-logo-horizontal.png";
 import hackIntlLogo from "../../assets/hackIntl-logo.jpg";
 import clitchyLogo from "../../assets/glitchy-logo.png";
 import gscDubaiLogo from "../../assets/gsc-dubai.jpg";
+import { useTranslation } from "react-i18next";
 
 interface PartnerLogo {
   id: number;
@@ -26,6 +27,7 @@ const partnerLogos: PartnerLogo[] = [
 
 export function PartnersSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [t, i18n] = useTranslation("global");
 
   const scrollLeft = () => {
     const container = containerRef.current;
@@ -52,7 +54,15 @@ export function PartnersSection() {
 
   return (
     <section className="flex flex-col gap-11 py-12">
-        <h1 className={`text-3xl font-semibold`}>Trusted <span className={`text-primary`}>by</span> </h1>
+      {i18n.language === "ar" ? (
+        <h1 className={`text-3xl font-semibold`}>
+          <span>شركاء</span>
+          <span className={`text-primary`}> النجاح </span>
+        </h1>
+      ) : (
+        <h1 className={`text-3xl font-semibold`}>Partners <span className={`text-primary`}>in Progress</span> </h1>
+
+      )}
       <div className="max-w-7xl mx-auto px-4">
         <div className="relative">
           {/* Arrows */}

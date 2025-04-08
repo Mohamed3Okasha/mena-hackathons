@@ -4,8 +4,10 @@ import linkedinIcon from "../../assets/linkedin-icon.svg";
 import instagramIcon from "../../assets/instagram-icon.svg";
 import twitterIcon from "../../assets/twitter-icon.svg";
 import emailIcon from "../../assets/email-icon.svg";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const [t, i18n] = useTranslation("global");
   const currentYear = new Date().getFullYear();
 
   const handleNewsletterSubmit = (data: {
@@ -20,8 +22,8 @@ export function Footer() {
     <div className="grid grid-cols-5 relative">
       <div className="col-span-5 md:col-span-3 bg-sidebar text-left p-5 sm:p-[7%] text-center sm:text-left">
         {/* Header */}
-        <h2 className="text-2xl font-bold mb-2">Join Our Newsletter</h2>
-        <p className="text-lg text-gray-400 mb-6">Connect, compete, and create!</p>
+        <h2 className="text-2xl font-bold mb-2">{t("footerSection.newsletterTitle")}</h2>
+        <p className="text-lg text-gray-400 mb-6">{t("footerSection.newsletterSubTitle")}</p>
 
         {/* Newsletter Form */}
         <NewsletterForm onSubmit={handleNewsletterSubmit} />
@@ -29,9 +31,9 @@ export function Footer() {
       <div className="col-span-5 md:col-span-2 p-5 sm:p-[7%]" id="contact">
         <div className="mb-3 sm:mb-9">
           <h1 className="text-2xl lg:text-3xl font-semibold leading-none mb-3">
-            <span className="mr-3">Contact Us</span>
+            <span className="mr-3">{t("footerSection.contactTitle")}</span>
           </h1>
-          <p className="font-light text-1xl text-[#CECED0]">We're friendly</p>
+          <p className="font-light text-1xl text-[#CECED0]">{t("footerSection.contactSubTitle")}</p>
         </div>
         <div>
           <a

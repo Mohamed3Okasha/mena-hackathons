@@ -7,5 +7,51 @@
         "services": "Services",
         "partners": "Partners",
         "contact": "Contact"
+    },
+    "heroSection": {
+        "title": "The 1st Bilingual Hackathon Platform in the Middle East and North Africa",
+        "subTitle": "Be part of the Region's Innovation Ecosystem",
+        "actionButtonSign": "Sign now",
+        "actionButtonVisit": "Go to Platform"
+    },
+    "homePageEvents": {
+        "titleUpcoming": "Upcoming",
+        "titleEvents": "Events"
+    },
+    "servicesSection": {
+        "listTitle": "Upcoming",
+        "manageTitle": "Event",
+        "organiseTitle": "Event"
+    },
+    "serviceSection": {
+        "listCardTitle": "List The Hackathon",
+        "listCardFeature1": "Access to our Community",
+        "listCardFeature2": "Wider reach with Ecosystem",
+        "listCardFeature3": "Newsletter Feature",
+        "listCardTitleBtn": "Free Listing",
+        "manageCardTitle": "Manage The Hackathon",
+        "manageCardFeature1": "Full Digital Solution",
+        "manageCardFeature2": "End-to-End Management",
+        "manageCardFeature3": "Real-Time Analytics",
+        "manageCardFeature4": "Customizable Platform",
+        "manageCardBtn": "Paid Subscription",
+        "organiseCardTitle": "Organise The Hackathon",
+        "organiseCardFeature1": "Tailored Support from A to Z",
+        "organiseCardFeature2": "Comprehensive Marketing & PR",
+        "organiseCardFeature3": "On-Site Support",
+        "organiseCardFeature4": "Detailed Post-Event Report",
+        "organiseCardBtn": "Custom Package",
+        "actionText": "Interested in one of our services?",
+        "emailText": "Write to us at"
+    },
+    "footerSection":{
+        "contactTitle": "Contact Us",
+        "contactSubTitle": "We're friendly",
+        "newsletterTitle": "Join Our Newsletter",
+        "newsletterSubTitle": "Connect, compete, and create!",
+        "newsletterFirstName": "First Name",
+        "newsletterLastName": "Last Name",
+        "newsletterEmail": "Email Address",
+        "newsletterSubscribe": "Subscribe"
     }
 }

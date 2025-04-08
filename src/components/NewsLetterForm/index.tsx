@@ -1,4 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
 
 interface NewsletterFormProps {
@@ -6,6 +7,7 @@ interface NewsletterFormProps {
 }
 
 export function NewsletterForm({ onSubmit }: NewsletterFormProps) {
+  const [t, i18n] = useTranslation("global");
   const initialValues = { firstName: "", lastName: "", email: "" };
 
   const validationSchema = Yup.object({
@@ -36,7 +38,7 @@ export function NewsletterForm({ onSubmit }: NewsletterFormProps) {
               <Field
                 type="text"
                 name="firstName"
-                placeholder="First Name"
+                placeholder={t("footerSection.newsletterFirstName")}
                 className={`w-full px-4 py-3 text-black border-2 ${errors.firstName && touched.firstName
                     ? "border-red-500"
                     : "border-gray-700"
@@ -52,7 +54,7 @@ export function NewsletterForm({ onSubmit }: NewsletterFormProps) {
               <Field
                 type="text"
                 name="lastName"
-                placeholder="Last Name"
+                placeholder={t("footerSection.newsletterLastName")}
                 className={`w-full px-4 py-3 text-black border-2 ${errors.lastName && touched.lastName
                     ? "border-red-500"
                     : "border-gray-700"
@@ -71,7 +73,7 @@ export function NewsletterForm({ onSubmit }: NewsletterFormProps) {
             <Field
               type="email"
               name="email"
-              placeholder="Email Address"
+              placeholder={t("footerSection.newsletterEmail")}
               className={`w-full px-4 py-3 text-black border-2 ${errors.email && touched.email
                   ? "border-red-500"
                   : "border-white"
@@ -81,7 +83,7 @@ export function NewsletterForm({ onSubmit }: NewsletterFormProps) {
               type="submit"
               className="px-6 py-3 bg-primary text-card font-bold transition-colors"
             >
-              Subscribe
+              {t("footerSection.newsletterSubscribe")}
             </button>
           </div>
         </Form>

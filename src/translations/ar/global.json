@@ -7,5 +7,46 @@
         "services": "الخدمات",
         "partners": "الشركاء",
         "contact": "التواصل"
-    }   
+    },
+    "heroSection": {
+        "title": "أول منصة ثنائية اللغة مخصصة للهاكاثون في الشرق الأوسط",
+        "subTitle": "كن جزءا من المجتمع الإبداعي في المنطقة",
+        "actionButtonSign": "سجل الأن",
+        "actionButtonVisit": "الدخول إلي المنصحة"
+    },
+    "homePageEvents": {
+        "titleUpcoming": "القادمة",
+        "titleEvents": "الفعاليات"
+    },
+    "serviceSection": {
+        "listCardTitle": "أدرج الهاكاثون",
+        "listCardFeature1": "الوصول إلى مجتمعنا",
+        "listCardFeature2": "انتشار أوسع ضمن المنظومة",
+        "listCardFeature3": "ميزة في النشرة الإخبارية",
+        "listCardBtn": "إدراج مجاني",
+        "manageCardTitle": "إدارة الهاكاثون",
+        "manageCardFeature1": "حل رقمي متكامل",
+        "manageCardFeature2": "إدارة شاملة من البداية إلى النهاية",
+        "manageCardFeature3": "تحليلات فورية للبيانات",
+        "manageCardFeature4": "منصة قابلة للتخصيص",
+        "manageCardBtn": "اشتراك مدفوع",
+        "organiseCardTitle": "تنظيم الهاكاثون",
+        "organiseCardFeature1": "دعم مخصص من الألف إلى الياء",
+        "organiseCardFeature2": "تسويق وعلاقات عامة شاملة",
+        "organiseCardFeature3": "دعم ميداني خلال الحدث",
+        "organiseCardFeature4": "تقرير تفصيلي بعد الفعالية",
+        "organiseCardBtn": "باقة مخصصة",
+        "actionText": "مهتم بإحدي خدماتنا؟",
+        "emailText": "أرسل لنا علي"
+    },
+    "footerSection":{
+        "contactTitle": "تواصل معنا",
+        "contactSubTitle": "نود أن نسمع منك",
+        "newsletterTitle": " أشترك في نشرتنا الإخبارية",
+        "newsletterSubTitle": "أتصل, شارك, أنتج!",
+        "newsletterFirstName": "الاسم الأول",
+        "newsletterLastName": "الاسم الأخير",
+        "newsletterEmail": "البريد الإلكتروني",
+        "newsletterSubscribe": "اشترك"
+    }
 }

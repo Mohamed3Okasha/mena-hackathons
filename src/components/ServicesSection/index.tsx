@@ -1,37 +1,40 @@
+import { useTranslation } from "react-i18next";
 import { ServiceCard } from "./ServiceCard";
 
 export function ServicesSection() {
+  const [t, i18n] = useTranslation("global");
+
   const services = [
     {
       id: 1,
-      headline: "List The Hackathon",
-      cost: "Free Listing",
+      headline: "listCardTitle",
+      cost: "listCardBtn",
       options: [
-        { id: 1, text: "Access to our Community" },
-        { id: 2, text: "Wider reach with Ecosystem" },
-        { id: 3, text: "Newsletter Feature" },
+        { id: 1, text: "listCardFeature1" },
+        { id: 2, text: "listCardFeature2" },
+        { id: 3, text: "listCardFeature3" },
       ],
     },
     {
       id: 2,
-      headline: "Manage The Hackathon",
-      cost: "Paid Subscription",
+      headline: "manageCardTitle",
+      cost: "manageCardBtn",
       options: [
-        { id: 1, text: "Full Digital Solution" },
-        { id: 2, text: "End-to-End Management" },
-        { id: 3, text: "Real-Time Analytics" },
-        { id: 4, text: "Customizable Platform" },
+        { id: 1, text: "manageCardFeature1" },
+        { id: 2, text: "manageCardFeature2" },
+        { id: 3, text: "manageCardFeature3" },
+        { id: 4, text: "manageCardFeature4" },
       ],
     },
     {
       id: 3,
-      headline: "Organise The Hackathon",
-      cost: "Paid Package",
+      headline: "organiseCardTitle",
+      cost: "organiseCardBtn",
       options: [
-        { id: 1, text: "Tailored Support from A to Z" },
-        { id: 2, text: "Comprehensive Marketing and PR" },
-        { id: 3, text: "On-Site Support" },
-        { id: 4, text: "Detailed Post-Event Report" },
+        { id: 1, text: "organiseCardFeature1" },
+        { id: 2, text: "organiseCardFeature2" },
+        { id: 3, text: "organiseCardFeature3" },
+        { id: 4, text: "organiseCardFeature4" },
       ],
     },
   ];
@@ -39,7 +42,14 @@ export function ServicesSection() {
   return (
     <section className="sm:px-[15%] py-12 px-auto flex flex-col gap-11">
       {/* <h2 className="text-center text-3xl text-white font-bold mb-8">Our Services</h2> */}
-      <h1 className={`text-3xl font-semibold`}><span className={`text-primary`}>Our </span>Services </h1>
+      {i18n.language === "ar" ? (
+        <h1 className={`text-3xl font-semibold`}>
+          <span className={`text-primary`}>الخدمات </span>
+          المتاحة
+        </h1>
+      ) : (
+        <h1 className={`text-3xl font-semibold`}><span className={`text-primary`}>Our </span>Services </h1>
+      )}
 
       <div className="grid sm:grid-cols-3 gap-11 justify-center">
         {services.map((service) => (
@@ -53,9 +63,10 @@ export function ServicesSection() {
       </div>
       <div className={`mt-10 flex flex-col items-center`}>
         <h1 className="text- text-lg lg:text-2xl sm:font-semibold leading-none mb-3">
-          Interested in one of our services?
+          {t("serviceSection.actionText")}
           <span className={`block mt-5 text-xl font-extralight sm:font-normal`}>
-            Write to us at: <a href={`mailto:partner@menahackathons.com`} target={`blank`} className={`text-primary`}>
+          {t("serviceSection.emailText")}
+          : <a href={`mailto:partner@menahackathons.com`} target={`blank`} className={`text-primary`}>
               partner@menahackathons.com
             </a>
           </span>
