@@ -52,6 +52,8 @@
         "newsletterFirstName": "First Name",
         "newsletterLastName": "Last Name",
         "newsletterEmail": "Email Address",
-        "newsletterSubscribe": "Subscribe"
+        "newsletterSubscribe": "Subscribe",
+        "developedBy": "Developed by MH Tech House",
+        "copyrights": "MENA Hackathons. All rights reserved"
     }
 }

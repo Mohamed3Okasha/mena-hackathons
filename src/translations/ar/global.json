@@ -39,7 +39,7 @@
         "actionText": "مهتم بإحدي خدماتنا؟",
         "emailText": "أرسل لنا علي"
     },
-    "footerSection":{
+    "footerSection": {
         "contactTitle": "تواصل معنا",
         "contactSubTitle": "نود أن نسمع منك",
         "newsletterTitle": " أشترك في نشرتنا الإخبارية",
@@ -47,6 +47,8 @@
         "newsletterFirstName": "الاسم الأول",
         "newsletterLastName": "الاسم الأخير",
         "newsletterEmail": "البريد الإلكتروني",
-        "newsletterSubscribe": "اشترك"
+        "newsletterSubscribe": "اشترك",
+        "developedBy": "تم التطوير من خلال فريقنا",
+        "copyrights": " مينا هاكاثونز. كل الحقوق محفوظه"
     }
 }

@@ -20,10 +20,10 @@ export function Footer() {
 
   return (
     <div className="grid grid-cols-5 relative">
-      <div className="col-span-5 md:col-span-3 bg-sidebar text-left p-5 sm:p-[7%] text-center sm:text-left">
+      <div className={`col-span-5 md:col-span-3 bg-sidebar p-5 sm:p-[7%] text-center sm:text-${t(i18n.language === "ar" ? "right" : "left")}`}>
         {/* Header */}
-        <h2 className="text-2xl font-bold mb-2">{t("footerSection.newsletterTitle")}</h2>
-        <p className="text-lg text-gray-400 mb-6">{t("footerSection.newsletterSubTitle")}</p>
+        <h2 className="text-2xl font-bold mb-2 ">{t("footerSection.newsletterTitle")}</h2>
+        <p className="text-lg text-gray-400 mb-6 ">{t("footerSection.newsletterSubTitle")}</p>
 
         {/* Newsletter Form */}
         <NewsletterForm onSubmit={handleNewsletterSubmit} />
@@ -61,9 +61,9 @@ export function Footer() {
       </div>
       <div className="w-full px-[4%] col-span-5 sm:absolute md:bottom-1 lg:bottom-4 text-sm flex flex-col-reverse sm:flex-row justify-between items-center">
         <p className="font-light text-accent sm:text-left">
-          ©{currentYear} MENA Hackathons. All rights reserved.
+          ©{currentYear} {t("footerSection.copyrights")}.
         </p>
-        <p className="font-light text-primary sm:text-right">Developed by MH Tech House</p>
+        <p className="font-light text-primary sm:text-right">{t("footerSection.developedBy")}</p>
       </div>
     </div>
   );
