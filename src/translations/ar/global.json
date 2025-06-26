@@ -19,7 +19,7 @@
         "titleEvents": "الفعاليات"
     },
     "serviceSection": {
-        "listCardTitle": "أدرج الهاكاثون",
+        "listCardTitle": "إضافة الهاكاثون",
         "listCardFeature1": "الوصول إلى مجتمعنا",
         "listCardFeature2": "انتشار أوسع ضمن المنظومة",
         "listCardFeature3": "ميزة في النشرة الإخبارية",
@@ -43,7 +43,7 @@
         "contactTitle": "تواصل معنا",
         "contactSubTitle": "نود أن نسمع منك",
         "newsletterTitle": " أشترك في نشرتنا الإخبارية",
-        "newsletterSubTitle": "أتصل, شارك, أنتج!",
+        "newsletterSubTitle": "تواصل, شارك, أصنع!",
         "newsletterFirstName": "الاسم الأول",
         "newsletterLastName": "الاسم الأخير",
         "newsletterEmail": "البريد الإلكتروني",
