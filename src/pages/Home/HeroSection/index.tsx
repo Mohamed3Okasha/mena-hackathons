@@ -2,7 +2,7 @@ import mhLogo from "../../../assets/mh-logo-web.png";
 import { retrieveUserData } from "../../../utils/auth";
 
 export function HeroSection() {
-  const { language, token, user } = retrieveUserData();
+  const { token, user } = retrieveUserData();
 
   return (
     <div
