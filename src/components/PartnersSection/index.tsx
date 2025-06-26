@@ -27,7 +27,7 @@ const partnerLogos: PartnerLogo[] = [
 
 export function PartnersSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [t, i18n] = useTranslation("global");
+  const [, i18n] = useTranslation("global");
 
   const scrollLeft = () => {
     const container = containerRef.current;

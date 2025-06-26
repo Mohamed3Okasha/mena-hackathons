@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 export function HeroSection() {
     // const { language, token, user } = retrieveUserData();
-    const [t, i18n] = useTranslation("global");
+    const [t] = useTranslation("global");
     
 
     return (

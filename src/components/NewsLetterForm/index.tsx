@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
 
@@ -7,7 +7,7 @@ interface NewsletterFormProps {
 }
 
 export function NewsletterForm({ onSubmit }: NewsletterFormProps) {
-  const [t, i18n] = useTranslation("global");
+  const [t] = useTranslation("global");
   const initialValues = { firstName: "", lastName: "", email: "" };
 
   const validationSchema = Yup.object({

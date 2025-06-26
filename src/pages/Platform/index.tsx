@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { FaBell, FaUserCircle, FaUser, FaCalendarAlt, FaSignOutAlt } from 'react-icons/fa';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import mgLogo from '../../assets/mh-logo-web.png';
@@ -7,8 +7,8 @@ import { retrieveUserData } from '../../utils/auth';
 
 export function Platform() {
     const navigate = useNavigate();
-    const location = useLocation();
-    const isEventRoute = location.pathname.includes('/app/events/');
+    // const location = useLocation();
+    // const isEventRoute = location.pathname.includes('/app/events/');
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [selectedMenu, setSelectedMenu] = useState<number>(0);

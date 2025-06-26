@@ -12,7 +12,7 @@ interface ServiceCardProps {
 }
 
 export  function ServiceCard({ headline, options, cost }: ServiceCardProps){
-    const [t, i18n] = useTranslation("global");
+    const [t] = useTranslation("global");
   
   return (
     <div className="bg-card p-6 rounded-lg shadow-md flex flex-col gap-7 justify-between max-w-sm">

@@ -1,9 +1,9 @@
 import { TeamView } from "./TeamView";
 import { TeamMember } from "./types";
-interface ProjectPageProps{
-    members: TeamMember[];
-    teamName: string;
-}
+// interface ProjectPageProps{
+//     members: TeamMember[];
+//     teamName: string;
+// }
 export function ProjectPage(){
     const teamName = "Name1";
     const members: TeamMember[] = [{

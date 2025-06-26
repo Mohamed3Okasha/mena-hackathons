@@ -4,13 +4,13 @@ import { retrieveUserData } from "../../utils/auth";
 import { useEffect } from "react";
 
 export function Navbar() {
-    const [t, i18n] = useTranslation("global");
+    const [, i18n] = useTranslation("global");
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         i18n.changeLanguage(event.target.value);
         localStorage.setItem('language', event.target.value);
     };
-    const { language, token, user } = retrieveUserData();
+    const { language} = retrieveUserData();
 
     useEffect(() => {
         if (language) {

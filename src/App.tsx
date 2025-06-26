@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import { Home } from './pages/Home';
-import { SignPage } from './pages/Sign';
+// import { SignPage } from './pages/Sign';
 import { Platform } from './pages/Platform';
 import { EventPage } from './pages/Event/EventPage';
 import { PlatformEvents } from './pages/Platform/platformEvents';
