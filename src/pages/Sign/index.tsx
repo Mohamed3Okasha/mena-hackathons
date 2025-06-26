@@ -83,23 +83,23 @@ export function SignPage () {
     }
   }, []);
 
-    // useEffect(() => {
-    //     // Initialize Google Sign-In on component mount
-    //     window.google?.accounts.id.initialize({
-    //     client_id: `616959269050-6rcd50dhbr07vvr8impmgpjqpfc232lt.apps.googleusercontent.com`, // Replace with your Google Client ID
-    //     callback: handleGoogleCallbackResponse,
-    //     });
+    useEffect(() => {
+        // Initialize Google Sign-In on component mount
+        window.google?.accounts.id.initialize({
+        client_id: `616959269050-6rcd50dhbr07vvr8impmgpjqpfc232lt.apps.googleusercontent.com`, // Replace with your Google Client ID
+        callback: handleGoogleCallbackResponse,
+        });
 
-    //     // Render the Google Sign-In button
-    //     window.google.accounts.id.renderButton(
-    //     document.getElementById('googleSignInDiv'),
-    //     {
-    //         theme: 'outline', 
-    //         size: 'large',
-    //         text: 'continue_with',  // Choose the text option like 'signin_with', 'signup_with'
-    //     }
-    //     );
-    // }, []);
+        // Render the Google Sign-In button
+        window.google?.accounts.id.renderButton(
+        document.getElementById('googleSignInDiv'),
+        {
+            theme: 'outline', 
+            size: 'large',
+            text: 'continue_with',  // Choose the text option like 'signin_with', 'signup_with'
+        }
+        );
+    }, []);
 
 
    // Callback for Google Sign-In to retrieve the idToken
@@ -146,8 +146,8 @@ export function SignPage () {
     } else {
       response = signInUser({ variables: formData });
     }
-    // const {data} = await response;
-    // storeUserData(data?.singInUser?.token || data?.signUpUser?.token, data?.singInUser?.user || data?.signUpUser?.user);
+    const {data} = await response;
+    storeUserData(data?.singInUser?.token || data?.signUpUser?.token);
   };
 
   return (
