@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { retrieveUserData } from "../../utils/auth";
+// import { retrieveUserData } from "../../utils/auth";
 
 export function HeroSection() {
-    const { language, token, user } = retrieveUserData();
+    // const { language, token, user } = retrieveUserData();
     const [t, i18n] = useTranslation("global");
     
 
@@ -21,9 +21,9 @@ export function HeroSection() {
                 <p className={`font-medium text-xl sm:text-2xl`}>
                     {t("heroSection.subTitle")}
                 </p>
-                <a href={`${(token && user && user.firstName) ? `/app/events` : `/sign`}`} target={`_self`} className={`py-2 pl-3 pr-4 hover:bg-transparent md:hover:text-primary md:px-7 dark:text-white font-semibold text-white  border-2 border-primary bg-primary p-3 rounded-lg shadow-md shadow-black`}>
+                {/* <a href={`${(token && user && user.firstName) ? `/app/events` : `/sign`}`} target={`_self`} className={`py-2 pl-3 pr-4 hover:bg-transparent md:hover:text-primary md:px-7 dark:text-white font-semibold text-white  border-2 border-primary bg-primary p-3 rounded-lg shadow-md shadow-black`}>
                     {(token && user && user.firstName) ? t("heroSection.actionButtonVisit") : t("heroSection.actionButtonSign")}
-                </a>
+                </a> */}
             </div>
         </div>
     )
