@@ -28,7 +28,7 @@ export function GeneralEvent() {
                 </p>
             </div> */}
             <div className={`flex justify-center h-fit`}>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfPcHk24nqEHnhP9MCCROuwdK3Mh1X_GwaLq8G3qvXmHc8YtA/viewform?embedded=true" width="690" height="1700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfPcHk24nqEHnhP9MCCROuwdK3Mh1X_GwaLq8G3qvXmHc8YtA/viewform?embedded=true" width="690" height="1700">Loading…</iframe>
             </div>
         </div>
     )
