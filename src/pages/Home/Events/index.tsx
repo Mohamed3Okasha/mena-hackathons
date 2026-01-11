@@ -13,6 +13,7 @@ export function HomePageEvents() {
             date: `2025`, // format: "Month, Year"
             location: `MENA Region`, // format: "City, Country"
             tags: [`Smart Cities`, `Sustainable Urbanisation`],
+            isNewRoute: true,
         },
         {
             imageUrl: eventImage,
@@ -21,6 +22,8 @@ export function HomePageEvents() {
             date: `2025-2026`, // format: "Month, Year"
             location: `EU - SouthMed`, // format: "City, Country"
             tags: [`Active Citizenship`],
+            isNewRoute: true,
+
         },
         // {
         //     imageUrl: eventImage,

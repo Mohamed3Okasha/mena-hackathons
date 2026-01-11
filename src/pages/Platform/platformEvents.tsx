@@ -54,6 +54,7 @@ interface eventData{
     date: string,
     location: string,
     tags: string [],
+    isNewRoute?: boolean
 }
 
 interface CollectionEventsProps{
