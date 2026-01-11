@@ -1,9 +1,11 @@
+import mhLogo from "../../assets/mh-logo-web.png"
+
 export function CircleLoader({ size, icon }: { size: number, icon?: string }) {
     const borderWidth = size / 30;
 
     return (
         <div className="flex items-center justify-center h-screen">
-            {icon && <img src={icon} alt={`mh logo`} className={`w-20`} />}
+            <img src={icon || mhLogo} alt={`icon`} className={`w-20`} />
             <div className={`absolute`}>
                 <div
                     className=" animate-spin rounded-full border-primary"
@@ -22,20 +24,20 @@ export function CircleLoader({ size, icon }: { size: number, icon?: string }) {
 }
 
 export function LoadingBar({
-    width = "100%", 
-    height = "11px", 
+    width = "100%",
+    height = "11px",
     color = "accent",
-  }: {width?: string, height?:string, color?:string}){
+}: { width?: string, height?: string, color?: string }) {
     return (
-      <div
-        className="bg-accent relative" >
-        {/* Animated bar */}
-        
         <div
-          className="absolute h-full bg-accent animate-pulse rounded"
-          style={{ backgroundColor: color, width, height }}
-        />
-      </div>
+            className="bg-accent relative" >
+            {/* Animated bar */}
+
+            <div
+                className="absolute h-full bg-accent animate-pulse rounded"
+                style={{ backgroundColor: color, width, height }}
+            />
+        </div>
     );
 }
 export function SkeletonLoader() {
