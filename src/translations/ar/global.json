@@ -50,5 +50,9 @@
         "newsletterSubscribe": "اشترك",
         "developedBy": "تم التطوير من خلال فريقنا",
         "copyrights": " مينا هاكاثونز. كل الحقوق محفوظه"
+    },
+    "reportsPageEvents": {
+        "titleReports": "تقارير",
+        "titleEvents": "الفعاليات"
     }
 }

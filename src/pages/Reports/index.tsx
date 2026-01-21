@@ -29,9 +29,9 @@ export function Reports() {
         <div className={`my-11 flex flex-col gap-11`}>
             <h1 className={`text-3xl font-semibold`}>
                 {i18n.language === "ar" ? (
-                    <> {t("homePageEvents.titleEvents")} <span className={`text-primary`}>{t("homePageEvents.titleUpcoming")}</span> </>
+                    <> {t("reportsPageEvents.titleReports")} <span className={`text-primary`}>{t("reportsPageEvents.titleEvents")}</span> </>
                 ) : (
-                    <> {t("homePageEvents.titleUpcoming")} <span className={`text-primary`}>{t("homePageEvents.titleEvents")}</span> </>
+                    <> {t("reportsPageEvents.titleEvents")} <span className={`text-primary`}>{t("reportsPageEvents.titleReports")}</span> </>
                 )}
             </h1>
             <CollectionEvents eventsData={eventsData} />

@@ -44,7 +44,7 @@
         "actionText": "Interested in one of our services?",
         "emailText": "Write to us at"
     },
-    "footerSection":{
+    "footerSection": {
         "contactTitle": "Contact Us",
         "contactSubTitle": "We're friendly",
         "newsletterTitle": "Join Our Newsletter",
@@ -55,5 +55,9 @@
         "newsletterSubscribe": "Subscribe",
         "developedBy": "Developed by MH Tech House",
         "copyrights": "MENA Hackathons. All rights reserved"
+    },
+    "reportsPageEvents": {
+        "titleReports": "Reports",
+        "titleEvents": "Events"
     }
 }
