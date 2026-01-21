@@ -10,7 +10,7 @@ export function HomePageEvents() {
             imageUrl: eventImage,
             status: `upcoming`,
             title: `EcoHackathon`,
-            date: `2025`, // format: "Month, Year"
+            date: `2025-2026`, // format: "Month, Year"
             location: `MENA Region`, // format: "City, Country"
             tags: [`Smart Cities`, `Sustainable Urbanisation`],
             isNewRoute: true,
@@ -20,7 +20,7 @@ export function HomePageEvents() {
             status: `upcoming`,
             title: `HACKTIVE Youth`,
             date: `2025-2026`, // format: "Month, Year"
-            location: `EU - SouthMed`, // format: "City, Country"
+            location: `Euro-Mediterranean`, // format: "City, Country"
             tags: [`Active Citizenship`],
             isNewRoute: true,
 
