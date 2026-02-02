@@ -1,13 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Droplets } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { scrollToSection } from '../../../../utils/functions';
 
 const Hero = () => {
-  const badges = [
-    { icon: Globe, text: 'From Egypt to the World' },
-    { icon: Droplets, text: 'Water-Energy-Food Nexus' },
-    { icon: ArrowRight, text: 'Fully Funded International Opportunities' },
-  ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#001a2c]">

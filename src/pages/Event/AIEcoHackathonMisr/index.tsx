@@ -4,7 +4,7 @@ import About from './components/About';
 import Tracks from './components/Tracks';
 import Judging from './components/Judging';
 // import Prizes from './components/Prizes';
-import Timeline from './components/Timeline';
+// import Timeline from './components/Timeline';
 import CTAGrid from './components/CTAGrid';
 import Footer from './components/Footer';
 
@@ -19,7 +19,7 @@ export function AIEcoHackathonMisrEventPage() {
       <Tracks />
       <Judging />
       {/* <Prizes /> */}
-      <Timeline />
+      {/* <Timeline /> */}
       <CTAGrid />
       <Footer />
     </div>
