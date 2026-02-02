@@ -1,69 +1,98 @@
-import { ArrowRight, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Globe, Droplets } from 'lucide-react';
+import { scrollToSection } from '../../../../utils/functions';
 
-export default function Hero() {
+const Hero = () => {
+  const badges = [
+    { icon: Globe, text: 'From Egypt to the World' },
+    { icon: Droplets, text: 'Water-Energy-Food Nexus' },
+    { icon: ArrowRight, text: 'Fully Funded International Opportunities' },
+  ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-teal-800 to-emerald-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#001a2c]">
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.3),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0ea5e910_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e910_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(#4fd1ed 1px, transparent 1px), linear-gradient(90deg, #4fd1ed 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }} />
       </div>
 
-      <div className="absolute top-20 left-10 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
-
-      <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-teal-300 text-sm font-medium mb-4">
-            February, 2026 | Cairo, Egypt
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-            Innovate for the Future.
-            <br />
-            <span className="text-3xl md:text-5xl bg-gradient-to-r from-teal-300 to-emerald-300 bg-clip-text text-transparent">
-              Smart & Sustainable Cities.
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Join 300+ visionaries at the heart of Cairo to bridge ancient wisdom with modern tech.
-            Solve the urging challenge for a sustainable Mediterranean future.
-          </p>
-          <div className="flex items-center justify-center space-x-4 text-white/90 text-sm">
-            <div className="flex items-center space-x-2">
-              <Users className="w-5 h-5 text-teal-300" />
-              <span>From Egypt to the Euro-Med Region</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="text-center space-y-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-block"
+          >
+            <div className="bg-[#4fd1ed]/10 border border-[#4fd1ed]/30 rounded-full px-6 py-2 backdrop-blur-sm">
+              <span className="text-[#4fd1ed] font-semibold">
+                February 9–11, 2026 | Cairo, Egypt
+              </span>
             </div>
-            <span className="text-white/40">•</span>
-            <span>Water-Energy-Agriculture</span>
-            <span className="text-white/40">•</span>
-            <span>A gateway to international experience</span>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-            {/* <button
-              className="group px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-teal-500/50 hover:scale-105 transition-all flex items-center space-x-2"
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold"
+          >
+            <span className="text-white">Your Gateway to</span>
+            <br />
+            <span className="text-[#4fd1ed]">Global Innovation</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-xl sm:text-2xl text-gray-300 font-medium"
+          >
+            Bridging Mediterranean Legacy with Future Technology
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-gray-400 max-w-2xl mx-auto text-lg"
+          >
+            Join visionaries at the heart of Cairo for a transformative 72-hour journey where innovation meets impact.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+          >
+            <motion.button
+              onClick={() => scrollToSection('join')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group bg-[#4fd1ed] text-[#001a2c] px-8 py-4 rounded-lg font-bold text-lg shadow-xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 flex items-center gap-2"
             >
-              <span>Join the Hackathon</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button> */}
-            <a
-              href="https://bit.ly/AIEcoHackathon" target="_blank"
-              className="group px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-teal-500/50 hover:scale-105 transition-all flex items-center space-x-2"
-              // className="px-6 py-2.5 bg-gradient-to-r from-teal-600 to-emerald-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all"
+              Join the Hackathon
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection('partners')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="border-2 border-[#4fd1ed] text-[#4fd1ed] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#4fd1ed]/10 transition-all duration-300"
             >
-              <span>Join the Hackathon</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <button
-              className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-full font-semibold text-lg hover:bg-white/20 transition-all"
-            >
-              Stay Tuned
-            </button>
-          </div>
+              Partner With Us
+            </motion.button>
+          </motion.div>
+
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#001a2c] to-transparent" />
     </section>
   );
-}
+};
+
+export default Hero;
