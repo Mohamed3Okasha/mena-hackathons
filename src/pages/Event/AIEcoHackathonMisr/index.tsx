@@ -3,7 +3,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Tracks from './components/Tracks';
 import Judging from './components/Judging';
-// import Prizes from './components/Prizes';
+import Prizes from './components/Prizes';
 // import Timeline from './components/Timeline';
 import CTAGrid from './components/CTAGrid';
 import Footer from './components/Footer';
@@ -18,7 +18,7 @@ export function AIEcoHackathonMisrEventPage() {
       <About />
       <Tracks />
       <Judging />
-      {/* <Prizes /> */}
+      <Prizes />
       {/* <Timeline /> */}
       <CTAGrid />
       <Footer />

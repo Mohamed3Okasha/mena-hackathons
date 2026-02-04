@@ -16,11 +16,11 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Tracks', href: '#tracks' },
-    { name: 'Prizes', href: '#prizes' },
-    { name: 'Timeline', href: '#timeline' },
-    { name: 'Partners', href: '#partners' },
+    { name: 'About', href: 'about' },
+    { name: 'Tracks', href: 'tracks' },
+    { name: 'Prizes', href: 'prizes' },
+    { name: 'Timeline', href: 'timeline' },
+    { name: 'Partners', href: 'partners' },
   ];
 
   return (
@@ -29,8 +29,8 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-[#001a2c]/90 backdrop-blur-xl border-b border-cyan-500/20'
-          : 'bg-transparent'
+        ? 'bg-[#001a2c]/90 backdrop-blur-xl border-b border-cyan-500/20'
+        : 'bg-transparent'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,13 +46,14 @@ const Navigation = () => {
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <button
+                onClick={() => scrollToSection(link.href)}
                 key={link.name}
-                href={link.href}
+                // href={link.href}
                 className="text-gray-300 hover:text-[#4fd1ed] transition-colors duration-200 font-medium"
               >
                 {link.name}
-              </a>
+              </button>
             ))}
           </div>
 

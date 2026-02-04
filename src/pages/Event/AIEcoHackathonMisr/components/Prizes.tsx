@@ -4,39 +4,36 @@ import { Trophy, Plane, Rocket, Building2 } from 'lucide-react';
 const Prizes = () => {
   const prizes = [
     {
-      place: '2nd Place',
-      location: 'Switzerland',
+      place: '2nd place',
+      location: '',
       icon: Plane,
       features: [
-        'Fully funded trip to Switzerland',
-        'Top-tier accelerator enrollment',
-        'International mentorship program',
-        'Access to European investors',
+        'Partially funded trip to Switzerland',
+        'AI Credit access',
+        'Regional expansion support',
       ],
       highlighted: false,
       gradient: 'from-gray-400/20 to-gray-600/20',
     },
     {
       place: '1st Place',
-      location: 'Tunisia',
+      location: '',
       icon: Trophy,
       features: [
-        'Fully funded trip to Tunisia',
-        'Premium incubation program',
-        'Direct investor connections',
-        'Regional expansion support',
+        'Fully funded trip with EU Programme',
+        'AI Credit access',
+        'International visibility',
       ],
       highlighted: true,
       gradient: 'from-[#4fd1ed]/30 to-cyan-600/30',
     },
     {
-      place: 'Top 10 Teams',
-      location: 'Egypt',
+      place: 'Top 5 Teams',
+      location: '',
       icon: Rocket,
       features: [
-        'Comprehensive incubation support',
-        'ITIDA funding access',
-        'TIEC program enrollment',
+        'Mentorship support',
+        'AI Credit access',
         'Local ecosystem integration',
       ],
       highlighted: false,
@@ -80,18 +77,16 @@ const Prizes = () => {
               )}
               <div className={`absolute inset-0 bg-gradient-to-br ${prize.gradient} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300`} />
               <div
-                className={`relative backdrop-blur-xl rounded-2xl p-8 h-full ${
-                  prize.highlighted
-                    ? 'bg-[#4fd1ed]/10 border-2 border-[#4fd1ed]'
-                    : 'bg-white/5 border border-[#4fd1ed]/20'
-                }`}
+                className={`relative backdrop-blur-xl rounded-2xl p-8 h-full ${prize.highlighted
+                  ? 'bg-[#4fd1ed]/10 border-2 border-[#4fd1ed]'
+                  : 'bg-white/5 border border-[#4fd1ed]/20'
+                  }`}
               >
                 <div className="flex items-center justify-center mb-6">
-                  <div className={`w-20 h-20 rounded-full flex items-center justify-center ${
-                    prize.highlighted
-                      ? 'bg-[#4fd1ed] shadow-lg shadow-cyan-500/50'
-                      : 'bg-[#4fd1ed]/10'
-                  } group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-20 h-20 rounded-full flex items-center justify-center ${prize.highlighted
+                    ? 'bg-[#4fd1ed] shadow-lg shadow-cyan-500/50'
+                    : 'bg-[#4fd1ed]/10'
+                    } group-hover:scale-110 transition-transform duration-300`}>
                     <prize.icon className={prize.highlighted ? 'text-[#001a2c]' : 'text-[#4fd1ed]'} size={36} />
                   </div>
                 </div>

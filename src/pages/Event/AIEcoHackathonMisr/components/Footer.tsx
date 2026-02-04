@@ -1,18 +1,17 @@
 import { motion } from 'framer-motion';
-import { MapPin, Wifi, Building, Clock, Twitter, Linkedin, Instagram, Mail } from 'lucide-react';
+import { MapPin, Wifi, Building, Clock, Facebook, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const features = [
-    { icon: Building, text: 'State-of-the-art Labs' },
-    { icon: Wifi, text: 'High-speed Wi-Fi' },
-    { icon: Clock, text: '24/7 Spaces' },
+    { icon: Building, text: 'Sustainable Spaces' },
+    { icon: Wifi, text: 'Wi-Fi' },
+    { icon: Clock, text: 'Eco-Friendly' },
   ];
 
   const socials = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Mail, href: '#', label: 'Email' },
+    { icon: Linkedin, href: 'https://linkedin.com/company/menahacks', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://instagram.com/menahacks', label: 'Instagram' },
+    { icon: Facebook, href: 'https://facebook.com/menahacks', label: 'facebook' },
   ];
 
   return (
