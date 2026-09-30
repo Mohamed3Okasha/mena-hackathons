@@ -1,49 +1,8 @@
+import type { TracksData } from '../types';
 import { motion } from 'framer-motion';
-import { Sprout, Zap, GraduationCap } from 'lucide-react';
 
-const Tracks = () => {
-  const tracks = [
-    {
-      icon: Sprout,
-      number: 'I',
-      title: 'AgriTech & Water',
-      subtitle: 'Cultivating Resilience',
-      features: [
-        'Precision Irrigation Systems',
-        'Digital Supply Chain Solutions',
-        'Agri-FinTech Innovation',
-        'Sustainable Farming Technologies',
-      ],
-      gradient: 'from-green-500/20 to-blue-500/20',
-    },
-    {
-      icon: Zap,
-      number: 'II',
-      title: 'Energy',
-      subtitle: 'Powering the Green Transition',
-      features: [
-        'Smart Building Retrofitting',
-        'Renewable Energy Microgrids',
-        'Energy Storage Solutions',
-        'Grid Optimization Technologies',
-      ],
-      gradient: 'from-yellow-500/20 to-orange-500/20',
-    },
-    {
-      icon: GraduationCap,
-      number: 'III',
-      title: 'AI & Education',
-      subtitle: 'Future-Ready Minds',
-      features: [
-        'Adaptive Learning Platforms',
-        'Arabic Language LLMs',
-        'Educational Data Analytics',
-        'AI-Powered Personalization',
-      ],
-      gradient: 'from-purple-500/20 to-pink-500/20',
-    },
-  ];
 
+const Tracks = ({ title, highlight, description, tracks }: TracksData) => {
   return (
     <section id="tracks" className="relative py-24 bg-gradient-to-b from-[#001a2c] to-[#001528]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,11 +14,9 @@ const Tracks = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Three <span className="text-[#4fd1ed]">Core Pillars</span>
+            {title} <span className="text-[#4fd1ed]">{highlight}</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Choose your track and dive deep into transformative technologies that shape our future.
-          </p>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">{description}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

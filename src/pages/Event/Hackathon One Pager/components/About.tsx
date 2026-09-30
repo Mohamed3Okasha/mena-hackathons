@@ -1,28 +1,8 @@
+import type { AboutData } from '../types';
 import { motion } from 'framer-motion';
-import { Target, Users, TrendingUp } from 'lucide-react';
 
-const About = () => {
-  const features = [
-    {
-      icon: Target,
-      title: 'Mission-Driven',
-      description:
-        'Addressing the WEFE Nexus with innovative solutions that create lasting impact on water, energy, food, and environmental challenges.',
-    },
-    {
-      icon: Users,
-      title: 'Cross-Cultural',
-      description:
-        'Diverse teams working with international experts, mentors, and industry leaders to create globally relevant solutions.',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Scale-Oriented',
-      description:
-        'Building real-world startups with proven business models and access to international incubators and funding opportunities.',
-    },
-  ];
 
+const About = ({ title, highlight, description, features }: AboutData) => {
   return (
     <section id="about" className="relative py-24 bg-[#001a2c]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,12 +14,9 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Where Innovation Meets <span className="text-[#4fd1ed]">Impact</span>
+            {title} <span className="text-[#4fd1ed]">{highlight}</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Experience a 3-day intensive marathon where cutting-edge technology converges
-            with real-world challenges. Build, iterate, and launch solutions that matter.
-          </p>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">{description}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

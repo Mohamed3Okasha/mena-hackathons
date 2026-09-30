@@ -8,7 +8,7 @@ export function HomePageEvents() {
     const eventsData = [
         {
             imageUrl: eventImage,
-            status: `upcoming`,
+            status: `completed`,
             title: `EcoHackathon`,
             date: `2025-2026`, // format: "Month, Year"
             location: `MENA Region`, // format: "City, Country"
@@ -18,10 +18,10 @@ export function HomePageEvents() {
         {
             imageUrl: eventImage,
             status: `upcoming`,
-            title: `HACKTIVE Youth`,
+            title: `Social Hackathon`,
             date: `2025-2026`, // format: "Month, Year"
             location: `Euro-Mediterranean`, // format: "City, Country"
-            tags: [`Active Citizenship`],
+            tags: [`Active Citizenship`, `Social Innovation`],
             isNewRoute: true,
 
         },

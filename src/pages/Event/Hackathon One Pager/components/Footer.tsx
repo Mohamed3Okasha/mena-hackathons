@@ -1,22 +1,12 @@
 import { motion } from 'framer-motion';
-import { MapPin, Wifi, Building, Clock, Facebook, Linkedin, Instagram } from 'lucide-react';
+import { MapPin } from 'lucide-react';
+import type { FooterData } from '../types';
 
-const Footer = () => {
-  const features = [
-    { icon: Building, text: 'Sustainable Spaces' },
-    { icon: Wifi, text: 'Wi-Fi' },
-    { icon: Clock, text: 'Eco-Friendly' },
-  ];
-
-  const socials = [
-    { icon: Linkedin, href: 'https://linkedin.com/company/menahacks', label: 'LinkedIn' },
-    { icon: Instagram, href: 'https://instagram.com/menahacks', label: 'Instagram' },
-    { icon: Facebook, href: 'https://facebook.com/menahacks', label: 'facebook' },
-  ];
-
+const Footer = ({ title, highlight, tagline, copyright, venue, features, socials }: FooterData) => {
   return (
-    <footer className="relative bg-gradient-to-b from-[#001528] to-[#000d1a] pt-24 pb-8">
+    <footer id="footer" className="relative bg-gradient-to-b from-[#001528] to-[#000d1a] pt-24 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {venue && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,12 +18,12 @@ const Footer = () => {
             <div className="flex items-start justify-center gap-3 mb-6">
               <MapPin className="text-[#4fd1ed] flex-shrink-0 mt-1" size={24} />
               <div className="text-left">
-                <h3 className="text-2xl font-bold text-white mb-2">Venue</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">{venue?.title}</h3>
                 <p className="text-gray-300 text-lg">
-                  Heliopolis University for Sustainable Development
+                  {venue?.name}
                 </p>
                 <p className="text-gray-400">
-                  El Salam City, Cairo, Egypt
+                  {venue?.address}
                 </p>
               </div>
             </div>
@@ -52,6 +42,7 @@ const Footer = () => {
             </div>
           </div>
         </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -77,16 +68,16 @@ const Footer = () => {
 
           <div className="text-center space-y-4">
             <div className="text-2xl font-bold text-white">
-              AI EcoHackathon Misr <span className="text-[#4fd1ed]">'26</span>
+              {title} <span className="text-[#4fd1ed]">{highlight}</span>
             </div>
             <div className="text-gray-400 text-sm">
-              Bridging Mediterranean Legacy with Future Technology
+              {tagline}
             </div>
           </div>
 
           <div className="pt-8 border-t border-[#4fd1ed]/20 w-full text-center">
             <p className="text-gray-500 text-sm">
-              © 2026 AI EcoHackathon Misr. All rights reserved.
+              {copyright}
             </p>
           </div>
         </motion.div>

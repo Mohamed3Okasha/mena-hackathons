@@ -1,16 +1,10 @@
+import type { JudgingData } from '../types';
 import { motion } from 'framer-motion';
 import { Award } from 'lucide-react';
 
-const Judging = () => {
-  const criteria = [
-    { name: 'Technical Innovation', percentage: 30, color: '#4fd1ed' },
-    { name: 'Scalability', percentage: 25, color: '#3ba9c5' },
-    { name: 'Economic Viability', percentage: 20, color: '#2a8aa8' },
-    { name: 'Social & Eco Impact', percentage: 15, color: '#1a6b8a' },
-  ];
-
+const Judging = ({ title, highlight, description, criteria, bonus, note }: JudgingData) => {
   return (
-    <section className="relative py-24 bg-[#001528]">
+    <section id="judging" className="relative py-24 bg-[#001528]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,11 +14,9 @@ const Judging = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Judging <span className="text-[#4fd1ed]">Criteria</span>
+            {title} <span className="text-[#4fd1ed]">{highlight}</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Your innovation will be evaluated on multiple dimensions to ensure holistic excellence.
-          </p>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">{description}</p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
@@ -64,6 +56,7 @@ const Judging = () => {
               ))}
             </div>
 
+            {bonus && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -77,13 +70,14 @@ const Judging = () => {
                   <Award className="text-[#001a2c]" size={24} />
                 </div>
                 <div>
-                  <div className="text-[#4fd1ed] font-bold text-2xl mb-1">+10% Bonus</div>
+                  <div className="text-[#4fd1ed] font-bold text-2xl mb-1">{bonus?.title}</div>
                   <div className="text-white font-medium">
-                    MVP Delivery (Physical or digital prototype)
+                    {bonus?.description}
                   </div>
                 </div>
               </div>
             </motion.div>
+            )}
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -92,7 +86,7 @@ const Judging = () => {
               transition={{ duration: 0.6, delay: 1 }}
               className="mt-8 text-center text-gray-400 text-sm"
             >
-              Total of 90% + 10% bonus for prototype delivery
+              {note}
             </motion.div>
           </div>
         </div>

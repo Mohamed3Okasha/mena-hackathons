@@ -1,34 +1,8 @@
+import type { TimelineData } from '../types';
 import { motion } from 'framer-motion';
-import { FileText, Users, Rocket, TrendingUp } from 'lucide-react';
 
-const Timeline = () => {
-  const events = [
-    {
-      icon: FileText,
-      date: 'Jan 1 – Feb 5',
-      title: 'Applications Open',
-      description: 'Submit your application and join 300+ innovators from across the region.',
-    },
-    {
-      icon: Users,
-      date: 'Feb 3 – Feb 8',
-      title: 'Online Mentoring Week',
-      description: 'Connect with mentors, form teams, and refine your ideas before the big event.',
-    },
-    {
-      icon: Rocket,
-      date: 'Feb 9 – Feb 11',
-      title: 'The 72-Hour Main Event',
-      description: 'Build, iterate, and launch your solution in an intensive hackathon marathon.',
-    },
-    {
-      icon: TrendingUp,
-      date: 'Feb 12 – May',
-      title: 'Incubation & Growth',
-      description: 'Access funding, mentorship, and international opportunities to scale your startup.',
-    },
-  ];
 
+const Timeline = ({ title, highlight, description, events }: TimelineData) => {
   return (
     <section id="timeline" className="relative py-24 bg-gradient-to-b from-[#001528] to-[#001a2c]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,11 +14,9 @@ const Timeline = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Journey to <span className="text-[#4fd1ed]">Impact</span>
+            {title} <span className="text-[#4fd1ed]">{highlight}</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            From application to scaling, we guide you through every step of your innovation journey.
-          </p>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">{description}</p>
         </motion.div>
 
         <div className="relative">

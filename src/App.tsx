@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { GeneralEvent } from './pages/Home/Events/GeneralEvent';
 import { Reports } from './pages/Reports';
 import { AIEcoHackathonMisrEventPage } from './pages/Event/AIEcoHackathonMisr';
+import { IntlSocialHackathonEventPage } from './pages/Event/Intl Social Hackathon - Oct 2026';
 
 export function App() {
   const [, i18n] = useTranslation("global");
@@ -32,6 +33,10 @@ export function App() {
     {
       path: `/ecohackathon/`,
       element: <AIEcoHackathonMisrEventPage />
+    },
+    {
+      path: `/social-hackathon/`,
+      element: <IntlSocialHackathonEventPage />
     },
     // {
     //   path: `/sign`,

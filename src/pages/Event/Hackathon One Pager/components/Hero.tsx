@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { scrollToSection } from '../../../../utils/functions';
+import type { HeroData } from '../types';
 
-const Hero = () => {
+const Hero = ({ badge, title, highlight, subtitle, description, actions }: HeroData) => {
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#001a2c]">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#001a2c]">
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{
           backgroundImage: `linear-gradient(#4fd1ed 1px, transparent 1px), linear-gradient(90deg, #4fd1ed 1px, transparent 1px)`,
@@ -23,7 +23,7 @@ const Hero = () => {
           >
             <div className="bg-[#4fd1ed]/10 border border-[#4fd1ed]/30 rounded-full px-6 py-2 backdrop-blur-sm">
               <span className="text-[#4fd1ed] font-semibold">
-                February 9–11, 2026 | Cairo, Egypt
+                {badge}
               </span>
             </div>
           </motion.div>
@@ -34,9 +34,9 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold"
           >
-            <span className="text-white">Your Gateway to</span>
+            <span className="text-white">{title}</span>
             <br />
-            <span className="text-[#4fd1ed]">Global Innovation</span>
+            <span className="text-[#4fd1ed]">{highlight}</span>
           </motion.h1>
 
           <motion.p
@@ -45,7 +45,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-xl sm:text-2xl text-gray-300 font-medium"
           >
-            Bridging Mediterranean Legacy with Future Technology
+            {subtitle}
           </motion.p>
 
           <motion.p
@@ -54,7 +54,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-gray-400 max-w-2xl mx-auto text-lg"
           >
-            Join visionaries at the heart of Cairo for a transformative 72-hour journey where innovation meets impact.
+            {description}
           </motion.p>
 
           <motion.div
@@ -63,23 +63,14 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
-            <motion.button
-              onClick={() => scrollToSection('join')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group bg-[#4fd1ed] text-[#001a2c] px-8 py-4 rounded-lg font-bold text-lg shadow-xl shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 flex items-center gap-2"
-            >
-              Join the Hackathon
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </motion.button>
-            <motion.button
-              onClick={() => scrollToSection('partners')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border-2 border-[#4fd1ed] text-[#4fd1ed] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#4fd1ed]/10 transition-all duration-300"
-            >
-              Partner With Us
-            </motion.button>
+            {actions.map((action, index) => (
+              <motion.a key={action.href + action.label} href={action.href}
+                target={action.newTab ? '_blank' : undefined} rel={action.newTab ? 'noopener noreferrer' : undefined}
+                whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                className={index === 0 ? 'group bg-[#4fd1ed] text-[#001a2c] px-8 py-4 rounded-lg font-bold text-lg flex items-center gap-2' : 'border-2 border-[#4fd1ed] text-[#4fd1ed] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#4fd1ed]/10'}>
+                {action.label}{index === 0 && <ArrowRight size={20} />}
+              </motion.a>
+            ))}
           </motion.div>
 
         </div>

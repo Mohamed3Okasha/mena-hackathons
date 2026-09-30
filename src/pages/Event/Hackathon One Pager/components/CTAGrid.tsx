@@ -1,42 +1,8 @@
+import type { JoinData } from '../types';
 import { motion } from 'framer-motion';
-import { Users, MessageCircle, Mic, Handshake, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-const CTAGrid = () => {
-  const cards = [
-    {
-      icon: Users,
-      title: 'For Participants',
-      description: 'Join innovators building solutions that matter. Shape the future of tech in the Mediterranean region.',
-      buttonText: 'Apply Now',
-      gradient: 'from-blue-500/20 to-cyan-500/20',
-      buttonId: `participants`,
-    },
-    {
-      icon: MessageCircle,
-      title: 'For Mentors',
-      description: 'Guide the next generation of entrepreneurs. Share your expertise and help shape groundbreaking ideas.',
-      buttonText: 'Become a Mentor',
-      gradient: 'from-green-500/20 to-emerald-500/20',
-      buttonId: `mentors`,
-    },
-    {
-      icon: Mic,
-      title: 'For Speakers',
-      description: 'Inspire innovators with your insights. Connect with passionate builders and thought leaders.',
-      buttonText: 'Join as Speaker',
-      gradient: 'from-orange-500/20 to-red-500/20',
-      buttonId: `speakers`,
-    },
-    {
-      icon: Handshake,
-      title: 'For Partners',
-      description: 'Collaborate with top talent and institutions. Be part of a movement transforming the tech ecosystem.',
-      buttonText: 'Partner With Us',
-      gradient: 'from-purple-500/20 to-pink-500/20',
-      buttonId: `partners`,
-    },
-  ];
-
+const CTAGrid = ({ title, highlight, description, cards }: JoinData) => {
   return (
     <section id="join" className="relative py-24 bg-[#001a2c]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,11 +14,9 @@ const CTAGrid = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Join the <span className="text-[#4fd1ed]">Movement</span>
+            {title} <span className="text-[#4fd1ed]">{highlight}</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Whether you're a builder, mentor, speaker, or partner, there's a place for you in our ecosystem.
-          </p>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">{description}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -77,9 +41,9 @@ const CTAGrid = () => {
                 <p className="text-gray-300 mb-6 flex-grow leading-relaxed">{card.description}</p>
 
                 <motion.a
-                  href="https://bit.ly/AIEcoHackathon"
-                  target="_blank" // Opens in a new tab
-                  rel="noopener noreferrer" // Security best practice
+                  href={card.href}
+                  target={card.newTab ? "_blank" : undefined}
+                  rel={card.newTab ? "noopener noreferrer" : undefined}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="group/btn bg-[#4fd1ed] text-[#001a2c] px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
