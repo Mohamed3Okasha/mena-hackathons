@@ -1,4 +1,4 @@
-import { Target, Users, MapPin, Trees, TrendingUp, Sprout, Zap, GraduationCap, Plane, Trophy, Rocket, FileText, MessageCircle, Mic, Handshake, Building, Wifi, Clock, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { Target, Users, MapPin, Trees, TrendingUp, Sprout, Zap, GraduationCap, Plane, Trophy, Rocket, FileText, MessageCircle, Mic, Handshake, Linkedin, Instagram, Facebook } from 'lucide-react';
 import type { HackathonData } from '../Hackathon One Pager/types';
 
 export const intSocialHackathonData: HackathonData = {
